@@ -9,9 +9,12 @@ settings:
     -
         id: col-accent-value
         title: Theme color
-        description: Input your desired hue value for the theme. Orange (20) and pink (330), and red (0) are good options as well.
-        type: variable-number
-        default: 150
+        description: Select your desired color for the theme. Orange (20), pink (320), and red (0) are good options as well.
+        type: variable-number-slider
+        default: 140
+        min: 0
+        max: 360
+        step: 20
     -
         id: oled-background
         title: Pure black background
