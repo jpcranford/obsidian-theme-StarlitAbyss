@@ -60,6 +60,12 @@ settings:
             - Michroma
             - Kode Mono
             - Segoe UI
+    -
+        id: custom-mono-font
+        title: Custom monospace font
+        description: Use the theme's monospaced font instead of the option set in Appearance.
+        default: true
+        type: class-toggle 
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -104,6 +110,10 @@ settings:
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
     --text-selection: var(--col-base);
+}
+
+.custom-mono-font {
+    --font-monospace: "Kode Mono", var(--font-monospace-default);
 }
 
 /* Choose colors for light theme */
