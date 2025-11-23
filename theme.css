@@ -13,7 +13,7 @@ settings:
         type: variable-number-slider
         default: 140
         min: 0
-        max: 360
+        max: 359
         step: 20
     -
         id: oled-background
@@ -28,7 +28,6 @@ settings:
         default: Scifi Title
         options:
             - Scifi Title
-            - Audiowide
             - Kode Mono
             - Tomorrow
             - Science Gothic
@@ -36,7 +35,7 @@ settings:
             - Segoe UI
     - 
         id: fnt-head-p
-        title: Text font
+        title: Main font
         description: Select a suitably sci-fi font for most text. Alternatives for the most famous have been provided- Eurostile Extended (Michroma), OCR-A (Kode Mono), and Bank Gothic (Science Gothic).
         type: variable-select
         default: Kode Mono
@@ -48,7 +47,7 @@ settings:
             - Segoe UI
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
     font-family: Scifi Title;
