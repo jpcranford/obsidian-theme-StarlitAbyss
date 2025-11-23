@@ -36,6 +36,11 @@ settings:
         title: Pure black background
         description: Use a pure black background.
         type: class-toggle
+    -
+        id: bright-table-text
+        title: Brighter table text
+        description: Use a brighter color for text inside tables.
+        type: class-toggle
     - 
         id: fnt-title
         title: Title font
@@ -373,7 +378,7 @@ body {
     --col-pr-txt-checkbox-full: var(--col-muted);
     --col-pr-hr: var(--col-base);
     --col-pr-txt-tableh: var(--col-accent-plus);
-    --col-pr-txt-table: var(--col-muted-plus);
+    --col-pr-txt-table: var(--col-base);
     --siz-pr-txt-table: var(--siz-txt-p);
     --col-pr-bckg-tableh: var(--col-muted);
     --col-pr-bckg-table: var(--col-base-background);
@@ -383,6 +388,10 @@ body {
     --col-pr-bckg-tag: var(--col-important);
 
     --heading-spacing: calc(var(--p-spacing) * 2);
+}
+
+.bright-table-text {
+    --col-pr-txt-table: var(--col-accent-plus);
 }
 
 /* ----- OBSIDIAN PANELS ----- */
@@ -838,7 +847,6 @@ hr {
     font-family: var(--fnt-pr-headers);
     letter-spacing: var(--letterspacing-pr-headers);
     line-height: var(--line-height-pr-headers);
-
 }
 
 .markdown-preview-view h4 {
@@ -971,7 +979,8 @@ em {
 
 /* Tables */
 .markdown-preview-view table {
-    color:  border-color: var(--col-pr-txt-table);
+    color: var(--col-pr-txt-table);
+/*    border-color: var(--col-pr-txt-table);*/
     font-size: var(--siz-pr-txt-table);
     background-color: var(--col-pr-bckg-table);
 }
