@@ -9,12 +9,28 @@ settings:
     -
         id: col-accent-value
         title: Theme color
-        description: Select your desired color for the theme. Orange (20), pink (320), and red (0) are good options as well.
-        type: variable-number-slider
-        default: 140
-        min: 0
-        max: 359
-        step: 20
+        description: Select your desired color for the theme.
+        type: variable-select
+        default: Terminal Green
+        options:
+            - 
+                label: Terminal Green
+                value: 120
+            - 
+                label: CyberPink
+                value: 320
+            - 
+                label: Dead Red
+                value: 5
+            - 
+                label: Ominous Orange
+                value: 25
+            - 
+                label: Ypsilon Yellow
+                value: 60
+            - 
+                label: Moonbase Blue
+                value: 200
     -
         id: oled-background
         title: Pure black background
@@ -27,7 +43,6 @@ settings:
         type: variable-select
         default: Michroma
         options:
-            - Scifi Title
             - Michroma
             - Bruno Ace SC
             - 
@@ -43,6 +58,7 @@ settings:
             - Tomorrow
             - Science Gothic
             - Michroma
+            - Kode Mono
             - Segoe UI
 */
 
@@ -220,27 +236,6 @@ settings:
     --interactive-accent-hover: var(--col-accent-plus); 
     
 }
-
-/*.theme-orange {*/
-    /*--col-base-background: #150f0b;
-    --col-base: #b26940;
-    --col-accent: #ff843f;
-    --col-accent-plus: #e5b499;
-    --col-muted: #3f2516;
-    --col-muted-plus: #070402;*/
-    /*--col-accent-value: 20;
-    --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
-    --col-base: HSL(var(--col-accent-value), 47%, 47%);
-    --col-accent: HSL(var(--col-accent-value), 100%, 62%);
-    --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
-    --col-muted: HSL(var(--col-accent-value), 48%, 17%);
-    --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);*/
-/*    --col-important: #FFD303;*/
-/*    --col-important-muted: #3F3401;*/
-/*    --col-important-plus: #FFF2BF;*/
-/*    --col-safety: var(--col-muted);*/
-/*    --col-danger: #318C54;*/
-/*}*/
 
 .oled-background {
     --col-base-background: black;
