@@ -371,6 +371,8 @@ body {
     --col-pr-txt-ol-bullet: var(--col-accent-plus);
     --col-pr-txt-tag: var(--col-muted);
     --col-pr-bckg-tag: var(--col-important);
+
+    --heading-spacing: calc(var(--p-spacing) * 2);
 }
 
 /* ----- OBSIDIAN PANELS ----- */
@@ -496,9 +498,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     font-family: var(--fnt-ed-headers);
     letter-spacing: var(--letterspacing-ed-headers);
     line-height: var(--line-height-ed-headers);
-    border-bottom: 2px dashed var(--col-ed-hr);
+    border-bottom: 0.125em dashed var(--col-ed-hr);
     padding-bottom: 5px;
-    margin: 5px 0px 5px !important;
+    margin: 5px 0px 1rem !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-2 {
     color: var(--col-ed-txt-h2);
@@ -506,7 +508,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     font-family: var(--fnt-ed-headers);
     letter-spacing: var(--letterspacing-ed-headers);
     line-height: var(--line-height-ed-headers);
-    padding-bottom:5px;
+    padding-bottom: 5px;
     margin: 5px 0px 0px !important;
 }
 
@@ -807,9 +809,9 @@ hr {
     font-size: var(--siz-pr-txt-h1);
     font-family: var(--fnt-pr-headers);
     letter-spacing: var(--letterspacing-pr-headers);
-    padding-bottom: 5px;
-    border-bottom: 2px dashed var(--col-pr-hr);
-    margin-bottom: 0px;
+    padding-bottom: 1rem;
+    border-bottom: 0.125em dashed var(--col-ed-hr);
+    margin-bottom: 1rem;
 }
 
 .markdown-preview-view h2 {
@@ -993,12 +995,12 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
 } 
 
 .markdown-rendered ol {
-    padding-left: 42.5px;
+    padding-left: 1em;
 /*  line-height: 15px;*/
 }
 
 .markdown-rendered ul {
-    padding-left: 35px;
+    padding-left: 1em;
 /*  line-height: 15px;*/
 }   
 
