@@ -255,7 +255,7 @@ settings:
     --background-modifier-success: var(--col-muted-plus);
     --background-modifier-message: var(--col-base);
     --background-modifier-form-field: var(--col-muted-plus);
-    --text-normal: var(--col-accent-plus);
+    --text-normal: var(--col-base);
     --text-muted: var(--col-accent-plus);
     --text-faint: var(--col-accent-plus);
     --text-on-accent: var(--col-muted-plus);
@@ -280,26 +280,7 @@ body {
     /* Edit mode variables */
     --col-ed-background: var(--col-base-background);
     --col-ed-caret: var(--col-accent-plus);
-    --fnt-ed-title: var(--fnt-title);
-    --fnt-ed-headers: var(--fnt-head-p);
-    --line-height-ed-text: auto;
-    --line-height-ed-headers: auto;
     --pad-ed-headers: 5px;
-    --letterspacing-ed-headers: var(--letterspacing-txt-headers);
-    --col-ed-txt-title: var(--col-accent-plus);
-    --siz-ed-txt-title: var(--siz-txt-title);
-    --col-ed-txt-h1: var(--col-accent);
-    --siz-ed-txt-h1: var(--siz-txt-h1);
-    --col-ed-txt-h2: var(--col-accent);
-    --siz-ed-txt-h2: var(--siz-txt-h2);
-    --col-ed-txt-h3: var(--col-accent);
-    --siz-ed-txt-h3: var(--siz-txt-h3);
-    --col-ed-txt-h4: var(--col-accent);
-    --siz-ed-txt-h4: var(--siz-txt-h4);
-    --col-ed-txt-h5: var(--col-accent);
-    --siz-ed-txt-h5: var(--siz-txt-h5);
-    --col-ed-txt-h6: var(--col-accent);
-    --siz-ed-txt-h6: var(--siz-txt-h6);
     --fnt-ed-text: var(--fnt-head-p);
     --letterspacing-ed-text: var(--letterspacing-txt-p);
     --col-ed-txt-highlight: var(--col-muted-plus);
@@ -311,31 +292,12 @@ body {
     --col-ed-bckg-quote-callout: var(--col-safety);
     --col-ed-bckg-quote-warning: var(--col-danger);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
-    --col-ed-txt-p: var(--col-base);
-    --siz-ed-txt-p: var(--siz-txt-p);
-    --col-ed-hr: var(--col-base);
     
     /* Preview mode variables */
     --col-pr-background: var(--col-base-background);
-    --fnt-pr-title: var(--fnt-title);
-    --fnt-pr-headers: var(--fnt-head-p);
     --line-height-pr-text: auto;
-    --line-height-pr-headers: auto;
-    --letterspacing-pr-headers: var(--letterspacing-txt-headers);
     --col-pr-txt-title: var(--col-accent-plus);
     --siz-pr-txt-title: var(--siz-txt-title);
-    --col-pr-txt-h1: var(--col-accent);
-    --siz-pr-txt-h1: var(--siz-txt-h1);
-    --col-pr-txt-h2: var(--col-accent);
-    --siz-pr-txt-h2: var(--siz-txt-h2);
-    --col-pr-txt-h3: var(--col-accent);
-    --siz-pr-txt-h3: var(--siz-txt-h3);
-    --col-pr-txt-h4: var(--col-accent);
-    --siz-pr-txt-h4: var(--siz-txt-h4);
-    --col-pr-txt-h5: var(--col-accent);
-    --siz-pr-txt-h5: var(--siz-txt-h5);
-    --col-pr-txt-h6: var(--col-accent);
-    --siz-pr-txt-h6: var(--siz-txt-h6);
     --fnt-pr-text: var(--fnt-head-p);
     --letterspacing-pr-text: var(--letterspacing-txt-p);
     --col-pr-txt-highlight: var(--col-muted-plus);
@@ -349,10 +311,11 @@ body {
     --col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
     --col-pr-txt-p: var(--col-base);
     --siz-pr-txt-p: var(--siz-txt-p);
-    --col-pr-hr: var(--col-base);
 
     --col-ul-bullet: var(--col-accent-plus);
     --col-ol-bullet: var(--col-accent-plus);
+
+
 
 /*  OBSIDIAN VARIABLES  */
 
@@ -372,12 +335,13 @@ body {
     --table-column-alt-background: unset !important; /* This is required for it not to happen. See https://forum.obsidian.md/t/unintended-coloring-for-alternating-columns-with-table-background/101721 */
     --table-text-color: var(--col-base);
 
-    --heading-spacing: calc(var(--p-spacing) * 2);
-
     --link-external-color: var(--col-accent);
     --link-external-color-hover: var(--col-accent-plus);
     --link-color: var(--col-accent);
     --link-color-hover: var(--col-accent-plus);
+    --link-unresolved-color: var(--col-danger);
+    --link-unresolved-decoration-style: wavy;
+    --link-unresolved-decoration-color: var(--col-danger);
 
     --font-text-theme: var(--fnt-head-p);
 
@@ -425,10 +389,51 @@ body {
 /*accent or accent plus for on*/
 /*    --toggle-thumb-color: var(--col-muted);*/
 
-    --link-unresolved-color: var(--col-danger);
-    --link-unresolved-decoration-style: wavy;
-    --link-unresolved-decoration-color: var(--col-danger);
+    --hr-color: var(--col-base);
+    --hr-thickness: 2px;
 
+    --inline-title-font: var(--fnt-title);
+    --inline-title-size: var(--siz-txt-title);
+    --inline-title-color: var(--col-accent-plus);
+
+    --h1-size: var(--siz-txt-h1);
+    --h2-size: var(--siz-txt-h2);
+    --h3-size: var(--siz-txt-h3);
+    --h4-size: var(--siz-txt-h4);
+    --h5-size: var(--siz-txt-h5);
+    --h6-size: var(--siz-txt-h6);    
+    --h1-color: var(--col-accent);
+    --h2-color: var(--col-accent);
+    --h3-color: var(--col-accent);
+    --h4-color: var(--col-accent);
+    --h5-color: var(--col-accent);
+    --h6-color: var(--col-accent);
+    --h1-letter-spacing: var(--letterspacing-txt-headers);
+    --h2-letter-spacing: var(--letterspacing-txt-headers);
+    --h3-letter-spacing: var(--letterspacing-txt-headers);
+    --h4-letter-spacing: var(--letterspacing-txt-headers);
+    --h5-letter-spacing: var(--letterspacing-txt-headers);
+    --h6-letter-spacing: var(--letterspacing-txt-headers);
+    --h1-font: var(--fnt-head-p);
+    --h2-font: var(--fnt-head-p);
+    --h3-font: var(--fnt-head-p);
+    --h4-font: var(--fnt-head-p);
+    --h5-font: var(--fnt-head-p);
+    --h6-font: var(--fnt-head-p);
+    --h1-weight: var(--bold-weight); /* Obsidian default = 700, all other headings are 600. Make 'em match.*/
+    --h2-weight: var(--bold-weight);
+    --h3-weight: var(--bold-weight);
+    --h4-weight: var(--bold-weight);
+    --h5-weight: var(--bold-weight);
+    --h6-weight: var(--bold-weight);
+/*    --h1-line-height: auto;*/ 
+/* NTS: ^^^^ Don't uncomment if you don't want to experiment a little. */
+    --h2-line-height: auto;
+    --h3-line-height: auto;
+    --h4-line-height: auto;
+    --h5-line-height: auto;
+    --h6-line-height: auto;
+    --heading-spacing: calc(var(--p-spacing) * 2);
 }
 
 .oled-background {
@@ -491,10 +496,6 @@ body {
 
 /* -------- WORKSPACE -------- */
 /* -------- EDIT MODE -------- */
-/* Content */
-.mod-cm6 .cm-content {
-    line-height: var(--line-height-ed-text);
-}
 
 /* Body */
 .mod-cm6 .cm-editor .cm-scroller {
@@ -504,7 +505,7 @@ body {
     caret-color: var(--col-ed-caret);   
 }
 
-/* The below text is the little "/a" wherever you are editing. */
+/* The below is the little "/a" to the right of an editing view. Commented out bc I can't stand the off-center editor it causes. */
 /*.mod-cm6 .cm-editor .cm-scroller::after {
     content:"/a";
     white-space: pre;
@@ -512,78 +513,26 @@ body {
 
 /* Headers */
 .cm-editor .inline-title {
-    color: var(--col-ed-txt-title);
-    font-size: var(--siz-ed-txt-title);
-    font-family: var(--fnt-ed-title);
-    letter-spacing: var(--letterspacing-ed-headers);
-    padding-bottom:5px;
+    letter-spacing: var(--letterspacing-txt-headers);
+}
+.markdown-preview-view .inline-title {
+    letter-spacing: var(--letterspacing-txt-headers);
+    padding-bottom: 0.5rem;
 }
 
-.mod-cm6 .cm-editor .HyperMD-header-1 {
-    color: var(--col-ed-txt-h1);
-    font-size: var(--siz-ed-txt-h1);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    border-bottom: 0.125em dashed var(--col-ed-hr);
-    padding-bottom: 5px;
-    margin: 5px 0px 1rem !important;
-}
-.mod-cm6 .cm-editor .HyperMD-header-2 {
-    color: var(--col-ed-txt-h2);
-    font-size: var(--siz-ed-txt-h2);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    padding-bottom: 5px;
-    margin: 5px 0px 0px !important;
-}
-
-.mod-cm6 .cm-editor .HyperMD-header-3 {
-    color: var(--col-ed-txt-h3);
-    font-size: var(--siz-ed-txt-h3);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    padding-bottom:5px;
-    margin: 5px 0px 0px !important;
-}
-.mod-cm6 .cm-editor .HyperMD-header-4 {
-    color: var(--col-ed-txt-h4);
-    font-size: var(--siz-ed-txt-h4);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    padding-bottom:5px;
-    margin: 5px 0px 0px !important;
-}
-.mod-cm6 .cm-editor .HyperMD-header-5 {
-    color: var(--col-ed-txt-h5);
-    font-size: var(--siz-ed-txt-h5);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    padding-bottom:5px;
-    margin: 5px 0px 0px !important;
-}
-.mod-cm6 .cm-editor .HyperMD-header-6 {
-    color: var(--col-ed-txt-h6);
-    font-size: var(--siz-ed-txt-h6);
-    font-family: var(--fnt-ed-headers);
-    letter-spacing: var(--letterspacing-ed-headers);
-    line-height: var(--line-height-ed-headers);
-    padding-bottom:5px;
-    margin: 5px 0px 0px !important;
+.mod-cm6 .cm-editor .HyperMD-header-1,
+.markdown-preview-view h1 {
+    padding-bottom: 1rem;
+    border-bottom: 4px dashed var(--col-base);
+    margin: 5px 0px 1rem !important; 
+    /* Obsidian overrides all heading margins in editing view, so this !important is necessary to space the paragraph off the dotted line. */
 }
 
 /* Text Formatting*/
 /* Strikethrough */
 .cm-strikethrough,
 .cm-strikethrough >*,
-.cm-strikethrough ~* {
-    color: var(--col-muted);
-}
-
+.cm-strikethrough ~*,
 del {
     color: var(--col-muted);
 }
@@ -637,22 +586,10 @@ del {
     background-color: inherit;
 }
 
-/* NTS: Leave this checkbox boxes be, it changes Obsidian's default shading behavior. */
 /* Checkbox unchecked */
 input.task-list-item-checkbox {
     background-color: var(--col-muted);
-}
-
-/* Normal text */
-.cm-editor .cm-line, ::selection {
-    color: var(--col-ed-txt-p);
-    font-size: var(--siz-ed-txt-p);
-}
-
-/* Other */
-/* Horizontal rule */
-hr {
-    border-color: var(--col-ed-hr);
+    /* NTS: Leave this one be, it changes Obsidian's default shading behavior. */
 }
 
 /* lists */
@@ -692,65 +629,6 @@ hr {
     font-family: var(--fnt-pr-text);
     letter-spacing: var(--letterspacing-pr-text);
     font-size: var(--siz-pr-txt-p);
-}
-
-/* Headers */
-.markdown-preview-view .inline-title {
-    color: var(--col-pr-txt-title);
-    font-size: var(--siz-pr-txt-title);
-    font-family: var(--fnt-pr-title);
-    letter-spacing: var(--letterspacing-pr-headers);
-    padding-bottom: 2.5px;
-}
-
-.markdown-preview-view h1 {
-    color: var(--col-pr-txt-h1);
-    font-size: var(--siz-pr-txt-h1);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    padding-bottom: 1rem;
-    border-bottom: 0.125em dashed var(--col-ed-hr);
-    margin-bottom: 1rem;
-}
-
-.markdown-preview-view h2 {
-    color: var(--col-pr-txt-h2);
-    font-size: var(--siz-pr-txt-h2);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    line-height: var(--line-height-pr-headers);
-}
-
-.markdown-preview-view h3 {
-    color: var(--col-pr-txt-h3);
-    font-size: var(--siz-pr-txt-h3);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    line-height: var(--line-height-pr-headers);
-}
-
-.markdown-preview-view h4 {
-    color: var(--col-pr-txt-h4);
-    font-size: var(--siz-pr-txt-h4);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    line-height: var(--line-height-pr-headers);
-}
-
-.markdown-preview-view h5 {
-    color: var(--col-pr-txt-h5);
-    font-size: var(--siz-pr-txt-h5);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    line-height: var(--line-height-pr-headers);
-}
-
-.markdown-preview-view h6 {
-    color: var(--col-pr-txt-h6);
-    font-size: var(--siz-pr-txt-h6);
-    font-family: var(--fnt-pr-headers);
-    letter-spacing: var(--letterspacing-pr-headers);
-    line-height: var(--line-height-pr-headers);
 }
 
 /* Text Formatting */
@@ -832,14 +710,6 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
     font-weight: bold;
 } 
 
-/*.list-bullet::after { 
-    display: none; 
-} 
-.is-live-preview .list-bullet, 
-.markdown-reading-view ul.has-list-bullet li::marker { 
-    color: var(--list-marker-color); 
-    content: "- "; 
-}*/
 
 .markdown-rendered ol {
     padding-left: 1em;
@@ -882,3 +752,8 @@ div.setting-item-description > div > small > strong {
 
 /* Fixme: Canvas - Tables have borders */
 
+/*.canvas-node div.el-table,
+.canvas-node div.el-table > * {
+    border-collapse: collapse;
+    border-left-color: var(--table-border-color);
+}*/
