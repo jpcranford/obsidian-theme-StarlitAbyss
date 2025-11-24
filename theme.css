@@ -314,10 +314,6 @@ body {
     --col-ed-bckg-table: var(--col-base-background);
     --col-ed-txt-ul-bullet: var(--col-accent-plus);
     --col-ed-txt-ol-bullet: var(--col-accent-plus);
-    --col-ed-txt-tagbeg: var(--col-important);
-    --col-ed-bckg-tagbeg: var(--col-muted);
-    --col-ed-txt-tagend: var(--col-important);
-    --col-ed-bckg-tagend: var(--col-muted);
     
     /* Preview mode variables */
     --col-pr-background: var(--col-base-background);
@@ -374,8 +370,6 @@ body {
     --col-pr-bckg-table: var(--col-base-background);
     --col-pr-txt-ul-bullet: var(--col-accent-plus);
     --col-pr-txt-ol-bullet: var(--col-accent-plus);
-    --col-pr-txt-tag: var(--col-muted);
-    --col-pr-bckg-tag: var(--col-important);
 
 /*  OBSIDIAN VARIABLES  */
 
@@ -403,6 +397,9 @@ body {
     --font-text-theme: var(--fnt-head-p);
 
     --tab-divider-color: unset;
+    --tag-color: var(--col-base-background);
+    --tag-background: var(--col-base);
+    --tab-container-background: var(--col-txt-titlebars);
 }
 
 .oled-background {
@@ -744,17 +741,6 @@ hr {
     padding-left: 20px;
 }
 
-/* Tags */
-.cm-hashtag.cm-hashtag-begin {
-    background-color: var(--col-ed-txt-tagbeg);
-    color: var(--col-ed-bckg-tagbeg);
-}
-
-.cm-hashtag.cm-hashtag-end {
-    background-color: var(--col-ed-txt-tagend);
-    color: var(--col-ed-bckg-tagend);
-}
-
 /* ---------- WORKSPACE --------- */
 /* -------- PREVIEW MODE -------- */
 
@@ -946,13 +932,6 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
 
 .markdown-preview-view ol>li {
     color: var(--col-pr-txt-p);
-}
-
-/* Tags */
-a.tag, a.tag:hover {
-    background-color: var(--col-pr-bckg-tag);
-    color: var(--col-pr-txt-tag);
-    padding-bottom: 0px;
 }
 
 /*Fixes for Style Settings UI Menu*/
