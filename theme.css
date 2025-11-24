@@ -94,10 +94,10 @@ settings:
     --col-accent-plus: #99E5B5;
     --col-muted: #163F26;
     --col-muted-plus: #020704;
-    --col-text-selection: #437254;
+/*    --col-text-selection: #437254;*/
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
-    --col-important-plus: #FFF2BF;
+/*    --col-important-plus: #FFF2BF;*/
     --col-safety: #122127;
     --col-danger: #230D0D;
     --col-txt-titlebars: black;
@@ -122,7 +122,7 @@ settings:
 }
 
 .custom-mono-font {
-    --font-monospace: "Kode Mono", var(--font-monospace-default);
+    --font-monospace-theme: "Kode Mono", var(--font-monospace-default);
 }
 
 /* TODO: Redo the light theme. */
@@ -189,13 +189,6 @@ settings:
 
 /* Choose colors for dark theme */
 .theme-dark {
-    /* Custom Workspace Color Overrides */
-    /*--col-base-background: #0B1510;
-    --col-base: #40B266;
-    --col-accent: #3FFF8C;
-    --col-accent-plus: #99E5B5;
-    --col-muted: #163F26;
-    --col-muted-plus: #020704;*/
     /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
     --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base: HSL(var(--col-accent-value), 47%, 47%);
@@ -203,10 +196,10 @@ settings:
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
     --col-muted: HSL(var(--col-accent-value), 48%, 17%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
-    --col-text-selection: HSL(var(--col-accent-value), 45%, 30%);
+    --text-selection: HSL(var(--col-accent-value), 45%, 30%);
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
-    --col-important-plus: #FFF2BF;
+/*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
     --col-danger: var(--col-muted-plus);
 
@@ -249,7 +242,8 @@ settings:
     --text-success: var(--col-accent);
     --text-selection: var(--col-text-selection);
     --text-accent: var(--col-accent-plus);
-    --text-accent-hover: var(--col-important-plus);
+/*    --text-accent-hover: var(--col-important-plus); */
+/* TODO: What does this do? ^^^^^ */
     --interactive-normal: var(--col-base);
     --interactive-hover: var(--col-muted);
     --interactive-accent-hsl: var(--col-accent);
@@ -258,13 +252,9 @@ settings:
     
 }
 
-.oled-background {
-    --col-base-background: black;
-}
-
 /* -------- GLOBAL -------- */
 body {
-    --font-interface: var(--fnt-head-p);
+    --font-interface-theme: var(--fnt-head-p);
     
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
@@ -308,10 +298,7 @@ body {
     --col-ed-txt-codeblock: var(--col-accent);
     --siz-ed-txt-codeblock: var(--siz-txt-p);
     --col-ed-bckg-codeblock: var(--col-muted);
-    --col-ed-hyperlink: var(--col-important);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
-    --col-ed-hyperlink-strikethrough: var(--col-important-muted);
-    --col-ed-hyperlink-hover: var(--col-important-plus);
     --col-ed-hyperlink-broken: red; /* Seems to not be possible to set this*/  
     --col-ed-bckg-hyperlink-broken: var(--col-danger);
     --col-ed-txt-p: var(--col-base);
@@ -371,11 +358,8 @@ body {
     --col-pr-txt-codeblock: var(--col-accent);
     --siz-pr-txt-codeblock: var(--siz-txt-p);
     --col-pr-bckg-codeblock: var(--col-muted);
-    --col-pr-txt-hyperlink: var(--col-important);
     --col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
     --col-pr-txt-hyperlink-unresolved: var(--col-important);
-    --col-pr-txt-hyperlink-strikethrough: var(--col-important-muted);
-    --col-pr-txt-hyperlink-hover: var(--col-important-plus);
     --col-pr-hyperlink-broken: red;
     --col-pr-txt-p: var(--col-base);
     --siz-pr-txt-p: var(--siz-txt-p);
@@ -410,6 +394,21 @@ body {
     --table-text-color: var(--col-ed-txt-table);
 
     --heading-spacing: calc(var(--p-spacing) * 2);
+
+    --link-external-color: var(--col-accent);
+    --link-external-color-hover: var(--col-accent-plus);
+    --link-color: var(--col-accent);
+    --link-color-hover: var(--col-accent-plus);
+
+    --font-text-theme: var(--fnt-head-p);
+
+    --tab-divider-color: unset;
+}
+
+.oled-background {
+    --col-base-background: black;
+    --tab-outline-color: var(--col-accent);
+/*  TODO: inactive tabs' border-bottom should also be --col-accent  */
 }
 
 .bright-table-text {
@@ -658,21 +657,6 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     font-size: var(--siz-ed-txt-codeblock);
 }
 
-/* Hyperlink */
-.markdown-source-view.mod-cm6 .cm-link:not(.cm-highlight),
- .markdown-source-view.mod-cm6:not(.cm-highlight) .cm-url:not(.cm-highlight),
- .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-highlight),
- .markdown-rendered .external-link, .markdown-rendered .internal-link
-{
-    color: var(--col-ed-hyperlink);
-    text-decoration: underline;
-}
-
-/* Hyperlink Hover */
-.markdown-rendered .external-link:hover, .markdown-rendered .internal-link:hover {
-    color: var(--col-pr-txt-hyperlink-hover);
-}
-
 /* Unresolved Hyperlink */ 
 .markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
     color: var(--col-pr-hyperlink-broken) !important;
@@ -683,33 +667,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     color: var(--col-ed-txt-highlight);
 }
 
-/* Unresolved Hyperlink Hover */
-.markdown-rendered .external-link.is-unresolved:hover, .markdown-rendered .internal-link.is-unresolved:hover {
-    color: var(--col-ed-hyperlink-hover);
-}
-
-
-/* Highlighted Hyperlink */
-.markdown-preview-view mark > .external-link, .internal-link {
-    color: var(--col-ed-txt-highlight);
-    background-color: var(--col-ed-hyperlink);
-}
-
-/* Highlighted Hyperlink Hover */
-.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
-    color: var(--col-ed-hyperlink-highlight-hover);
-    background-color: var(--col-ed-hyperlink-hover);
-}
-
 /* Hyperlink in a callout */
 .markdown-rendered .callout > .external-link, .internal-link {
     color: var(--col-ed-text-hyperlink);
-    background-color: inherit;
-}
-
-/* Hovered Hyperlink in a callout */
-.markdown-rendered .callout > .external-link:hover, .internal-link:hover {
-    color: var(--col-pr-txt-hyperlink-hover);
     background-color: inherit;
 }
 
@@ -718,15 +678,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     background-color: inherit;
 }
 
-/* Hovered Hyperlink in a warning */
-.markdown-rendered .callout[data-callout="warning"] > .external-link:hover, .internal-link:hover {
-    color: var(--col-pr-txt-hyperlink-hover) !important;
-    background-color: inherit;
-}
-
 /* Hyperlink Strikethrough */
 .markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
-    color: var(--col-pr-txt-hyperlink-strikethrough);
+    color: var(--col-important-muted);
 }
 
 
@@ -927,21 +881,10 @@ em {
     font-size: var(--siz-pr-txt-codeblock);
 }
 
-/* Hyperlink Hover */
-.cm-editor span.cm-underline:hover {
-    color: var(--col-pr-txt-hyperlink-hover);
-}
-
 /* Highlighted Hyperlink */
 .cm-editor span.cm-highlight > .cm-underline {
     color: var(--col-pr-txt-highlight);
     background-color: var(--col-pr-txt-hyperlink);
-}
-
-/* Highlighted Hyperlink Hover */
-.cm-editor span.cm-highlight > .cm-underline:hover {
-    color: var(--col-pr-txt-hyperlink-highlight-hover) !important;
-    background-color: var(--col-pr-txt-hyperlink-hover);
 }
 
 /*Checkbox unchecked */
