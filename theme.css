@@ -197,6 +197,7 @@ settings:
     --col-muted: HSL(var(--col-accent-value), 48%, 17%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
     --text-selection: HSL(var(--col-accent-value), 45%, 30%);
+
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
@@ -210,7 +211,6 @@ settings:
     --col-icons: var(--col-accent-plus);
     --col-txt-selectedtitles: var(--col-accent-plus);
     --col-bckg-selectedtitles: var(--col-muted);
-    --col-txt-titles: var(--col-accent); 
     --col-menucheckbox: var(--col-accent);
     --col-txt-menudropdowns: var(--col-accent);
     --col-bckg-menudropdowns: var(--col-muted);
@@ -240,16 +240,14 @@ settings:
     --text-on-accent: var(--col-muted-plus);
     --text-error: var(--col-important);
     --text-success: var(--col-accent);
-    --text-selection: var(--col-text-selection);
     --text-accent: var(--col-accent-plus);
 /*    --text-accent-hover: var(--col-important-plus); */
 /* TODO: What does this do? ^^^^^ */
-    --interactive-normal: var(--col-base);
-    --interactive-hover: var(--col-muted);
+    --interactive-normal: var(--col-muted);
+    --interactive-hover: var(--col-base);
     --interactive-accent-hsl: var(--col-accent);
     --interactive-accent: var(--col-accent);
     --interactive-accent-hover: var(--col-accent-plus); 
-    
 }
 
 /* -------- GLOBAL -------- */
@@ -284,8 +282,6 @@ body {
     --letterspacing-ed-text: var(--letterspacing-txt-p);
     --col-ed-txt-strong: var(--col-accent);
     --siz-ed-txt-strong: var(--siz-txt-p);
-    --col-ed-txt-italic: var(--col-accent);
-    --siz-ed-txt-italic: var(--siz-txt-p);
     --col-ed-txt-strikethrough: var(--col-muted);
     --col-ed-txt-highlight: var(--col-muted-plus);
     --siz-ed-txt-highlight: var(--siz-txt-p);
@@ -340,8 +336,6 @@ body {
     --letterspacing-pr-text: var(--letterspacing-txt-p);
     --col-pr-txt-strong: var(--col-accent);
     --siz-pr-txt-strong: var(--siz-txt-p);
-    --col-pr-txt-italic: var(--col-accent);
-    --siz-pr-txt-italic: var(--siz-txt-p);
     --col-pr-txt-strikethrough: var(--col-muted);
     --col-pr-txt-highlight: var(--col-muted-plus);
     --siz-pr-txt-highlight: var(--siz-txt-p);
@@ -400,6 +394,25 @@ body {
     --tag-color: var(--col-base-background);
     --tag-background: var(--col-base);
     --tab-container-background: var(--col-txt-titlebars);
+    --ribbon-background: var(--col-txt-titlebars);
+
+    --font-interface-theme: var(--fnt-head-p);
+    --nav-item-color: var(--col-base);
+    --vault-profile-color: var(--col-base);
+    --vault-profile-font-size: var(--col-base);
+    --nav-heading-color: var(--col-accent);
+/*    --nav-item-weight-active: 900;*/
+    --canvas-card-label-color: var(--col-muted);
+
+/*  .nav-file-title.is-active,  */
+/*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
+    --nav-item-color-active: var(--col-txt-selectedtitles);
+    --nav-item-background-active: var(--col-bckg-selectedtitles);
+    --nav-item-weight-active: 600;
+
+    --icon-color: var(--col-icons);
+    --icon-color-hover: var(--col-icons);
+    --icon-color-active: var(--col-txt-selectedtitles);
 }
 
 .oled-background {
@@ -432,7 +445,7 @@ body {
 .view-content
 {
     background-color: var(--col-bckg-mainpanels);
-}   
+}
 
 /* File Tree Header */
 .file-tree-header-fixed {
@@ -445,49 +458,6 @@ body {
 .workspace-tab-header-container,
 .titlebar-button  {
     background-color:   var(--col-txt-titlebars);
-}   
-
-/* Icons */
-.workspace-ribbon.mod-left .clickable-icon, .workspace-ribbon .sidebar-toggle-button {
-    color: var(--col-icons);
-}
-
-/* File Tree Alternative Path Icon */
-svg.oz-folder-toggle path,
-svg.oz-folder-toggle path:hover,
-.oz-folder-line:hover,
-.oz-nav-file-title:hover, 
-.oz-nav-file-title-content:hover {
-    fill: var(--col-icons);
-    color: var(--col-icons);
-    background-color: var(--col-bckg-selectedtitles);
-}
-
-/* Selected titles and folder icons */
-.oz-folder-name.is-folder-active, 
-.oz-folder-name.is-folder-active, 
-.nav-file-title.is-active, 
-.oz-folder-block:hover, 
-.oz-nav-file-title-content:hover, 
-.horizontal-tab-nav-item.is-active, .horizontal-tab-nav-item.is-active:hover, .vertical-tab-nav-item.is-active, .vertical-tab-nav-item.is-active:hover,
-div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.oz-nav-file.is-active div.oz-nav-file-title-content,
-.workspace-ribbon.mod-left .clickable-icon:hover, .titlebar-button:hover  {
-    color: var(--col-txt-selectedtitles);
-    background-color: var(--col-bckg-selectedtitles);
-}
-
-/* File Tree Alternative and normal (inactive) Folder / file name */
-.oz-folder-name, .oz-nav-file-title, .nav-file-title-content, 
-.horizontal-tab-nav-item, .vertical-tab-nav-item,
-.oz-nav-file-title .oz-nav-file-title-content {
-    color: var(--col-txt-titles); 
-}
-
-/* Selected folder / file names */
-.nav-file-title.is-active, .nav-file-title.is-active > .nav-file-title-content {
-    color: var(--col-txt-selectedtitles);
-    background-color: var(--col-bckg-selectedtitles);
-    font-weight: bold;
 }
 
 /* Checkboxes */
