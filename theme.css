@@ -367,6 +367,8 @@ body {
 
 /*  OBSIDIAN VARIABLES  */
 
+/*    --bold-weight: 900;*/
+
     --table-background: var(--col-pr-bckg-table);
     --table-border-width: 2px;
     --table-border-color: var(--col-pr-bckg-tableh);
@@ -572,12 +574,6 @@ body {
 .mod-cm6 .cm-editor .cm-strong {
     color: var(--col-ed-txt-strong);
     font-size: var(--siz-ed-txt-strong);
-}
-
-/* Italic */
-.mod-cm6 .cm-editor .cm-em {
-    color: var(--col-ed-txt-italic);
-    font-size: var(--siz-ed-txt-italic);
 }
 
 /* Strikethrough */
@@ -790,7 +786,7 @@ strong {
 
 /* Italic */
 em {
-    color: var(--col-pr-txt-italic);
+    color: var(--col-accent);
 }
 
 /* Strikethrough */ 
