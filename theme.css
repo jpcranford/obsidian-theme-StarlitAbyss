@@ -68,9 +68,14 @@ settings:
     -
         id: custom-mono-font
         title: Custom monospace font
-        description: Use the theme's monospaced font instead of the option set in Appearance.
+        description: Use this theme's monospaced font instead of the option set in Appearance.
         default: true
-        type: class-toggle 
+        type: class-toggle
+    -
+        id: mono-table
+        title: Inverted table style
+        description: Use an inverted style for tables.
+        type: class-toggle  
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -191,6 +196,7 @@ settings:
     --col-accent-plus: #99E5B5;
     --col-muted: #163F26;
     --col-muted-plus: #020704;*/
+    /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
     --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base: HSL(var(--col-accent-value), 47%, 47%);
     --col-accent: HSL(var(--col-accent-value), 100%, 62%);
@@ -387,11 +393,37 @@ body {
     --col-pr-txt-tag: var(--col-muted);
     --col-pr-bckg-tag: var(--col-important);
 
+/*  OBSIDIAN VARIABLES  */
+
+    --table-background: var(--col-pr-bckg-table);
+    --table-border-width: 2px;
+    --table-border-color: var(--col-pr-bckg-tableh);
+/*    --table-cell-vertical-alignment     Cell vertical alignment */ /* TODO: Play with this later */
+    --table-header-background: var(--col-pr-bckg-tableh);
+    --table-header-color: var(--col-ed-txt-tableh);
+    --table-header-border-width: 2px;
+    --table-column-first-border-width: 2px;
+    --table-column-last-border-width: 2px;
+    --table-header-border-color: var(--col-pr-bckg-tableh);
+    --table-header-background-hover: var(--col-pr-bckg-tableh);
+    --table-column-alt-background: unset !important; /* This is required for it not to happen. See https://forum.obsidian.md/t/unintended-coloring-for-alternating-columns-with-table-background/101721 */
+    --table-text-color: var(--col-ed-txt-table);
+
     --heading-spacing: calc(var(--p-spacing) * 2);
 }
 
 .bright-table-text {
-    --col-pr-txt-table: var(--col-accent-plus);
+    --table-text-color: var(--col-accent-plus);
+}
+
+.mono-table {
+/* TODO: Fully convert from the old table CSS to Obsidian variables */
+    --col-ed-txt-tableh: var(--col-base-background);
+    --col-ed-bckg-tableh: var(--col-base);
+    --col-pr-txt-tableh: var(--col-base-background);
+    --col-pr-bckg-tableh: var(--col-base);
+    --table-header-background: var(--col-base);
+    --table-header-color: var(--col-base-background);
 }
 
 /* ----- OBSIDIAN PANELS ----- */
@@ -497,10 +529,11 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
     caret-color: var(--col-ed-caret);   
 }
 
-.mod-cm6 .cm-editor .cm-scroller::after {
+/* The below text is the little "/a" wherever you are editing. */
+/*.mod-cm6 .cm-editor .cm-scroller::after {
     content:"/a";
     white-space: pre;
-}
+}*/
 
 /* Headers */
 .cm-editor .inline-title {
@@ -730,24 +763,6 @@ hr {
     border-color: var(--col-ed-hr);
 }
 
-/* Tables */
-.markdown-rendered table {
-    color: var(--col-ed-txt-table);
-    font-size: var(--siz-ed-txt-table);
-    background-color: var(--col-ed-bckg-table);
-}
-
-/* Table header */ 
-.markdown-source-view.mod-cm6 thead {
-    color: var(--col-ed-txt-tableh);
-    background-color: var(--col-ed-bckg-tableh);
-}
-/* Header content */
-.markdown-source-view.mod-cm6 th {
-    color: var(--col-ed-txt-tableh);
-    background-color: var(--col-ed-bckg-tableh);
-}
-
 /* lists */
 .markdown-source-view.mod-cm6 .HyperMD-list-line .list-bullet:after {
     height: 1.65em;
@@ -784,23 +799,6 @@ hr {
 .cm-hashtag.cm-hashtag-end {
     background-color: var(--col-ed-txt-tagend);
     color: var(--col-ed-bckg-tagend);
-}
-
-
-/* -------- PDFs -------- */
-@media print { 
-    html body .print .markdown-preview-view { 
-        -webkit-print-color-adjust: exact; 
-        background-color: var(--col-pr-background);
-        color: var(--col-pr-txt-p);
-        width: 100%;
-        height: 100%;
-    }
-    div {
-        background-image: url("imgUrlHere") !important;
-        background-repeat: repeat-y !important;
-  }
-
 }
 
 /* ---------- WORKSPACE --------- */
@@ -977,36 +975,16 @@ em {
     border-color: var(--col-pr-hr);
 }
 
-/* Tables */
-.markdown-preview-view table {
-    color: var(--col-pr-txt-table);
-/*    border-color: var(--col-pr-txt-table);*/
-    font-size: var(--siz-pr-txt-table);
-    background-color: var(--col-pr-bckg-table);
-}
-
-/* Table header */ 
-.markdown-rendered thead {
-    color: var(--col-pr-txt-tableh);
-    background-color: var(--col-pr-bckg-tableh);
-}
-
-/* Header Content */
-.markdown-rendered th {
-    color: var(--col-pr-txt-tableh);
-    background-color: var(--col-pr-bckg-tableh);
-}
-
 /* Lists */
 ol > li::marker, .cm-s-obsidian .cm-formatting-list {
     color: var(--col-pr-txt-ol-bullet);
 }
 
-.markdown-preview-view  .list-bullet:after {
+.markdown-preview-view .list-bullet:after {
     list-style-type: none;
     height: 1.65em;
     width: 1em;
-    border-radius: 50%;
+/*    border-radius: 50%;*/
     background-color: transparent;
     content:'>';
     color: var(--col-pr-txt-ul-bullet);
@@ -1034,6 +1012,7 @@ a.tag, a.tag:hover {
     padding-bottom: 0px;
 }
 
+/*Fixes for Style Settings UI Menu*/
 div.setting-item-description > div > small {
     font-size: var(--font-ui-smaller);
 }
