@@ -280,8 +280,6 @@ body {
     --siz-ed-txt-h6: var(--siz-txt-h6);
     --fnt-ed-text: var(--fnt-head-p);
     --letterspacing-ed-text: var(--letterspacing-txt-p);
-    --col-ed-txt-strong: var(--col-accent);
-    --siz-ed-txt-strong: var(--siz-txt-p);
     --col-ed-txt-strikethrough: var(--col-muted);
     --col-ed-txt-highlight: var(--col-muted-plus);
     --siz-ed-txt-highlight: var(--siz-txt-p);
@@ -334,8 +332,6 @@ body {
     --siz-pr-txt-h6: var(--siz-txt-h6);
     --fnt-pr-text: var(--fnt-head-p);
     --letterspacing-pr-text: var(--letterspacing-txt-p);
-    --col-pr-txt-strong: var(--col-accent);
-    --siz-pr-txt-strong: var(--siz-txt-p);
     --col-pr-txt-strikethrough: var(--col-muted);
     --col-pr-txt-highlight: var(--col-muted-plus);
     --siz-pr-txt-highlight: var(--siz-txt-p);
@@ -570,12 +566,6 @@ body {
 }
 
 /* Text Formatting*/
-/* Bold */
-.mod-cm6 .cm-editor .cm-strong {
-    color: var(--col-ed-txt-strong);
-    font-size: var(--siz-ed-txt-strong);
-}
-
 /* Strikethrough */
 .mod-cm6 .cm-editor .cm-strikethrough,
 .mod-cm6 .cm-editor .cm-strikethrough >*,
@@ -778,13 +768,11 @@ hr {
 }
 
 /* Text Formatting */
-/* Bold */
 strong {
-    color: var(--col-pr-txt-strong);
-    font-size: var(--siz-pr-txt-strong);
+    color: var(--col-accent);
+    font-size: var(--siz-txt-p);
 }
 
-/* Italic */
 em {
     color: var(--col-accent);
 }
