@@ -90,14 +90,16 @@ settings:
         title: List bullet
         description: Select which symbol you want to use for lists.
         type: variable-select
-        default: ">"
+        default: "‣"
         options:
             - ">"
             - "+"
             - "-"
             - "•"
-            - '▪'
+            - '*'
+            - '‣'
 */
+/*█⬡*/
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -139,7 +141,7 @@ settings:
     --files-font-size: 1em;
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
-    --list-bullet: ">";
+    --list-bullet: "‣";
 }
 
 .custom-mono-font {
@@ -447,6 +449,11 @@ body {
     --table-border-color: var(--col-base);
 }
 
+/* NOTE: Unsure about this look. */
+.nav-header {
+    background-color: var(--col-muted-plus);
+}
+
 /* ----- OBSIDIAN PANELS ----- */
 /* Panel Bodies */
 .nav-files-container, 
@@ -468,11 +475,6 @@ body {
 .workspace-ribbon .sidebar-toggle-button,
 .workspace-tab-header-container,
 .titlebar-button  {
-    background-color: var(--col-muted-plus);
-}
-
-/* NOTE: Unsure about this look. */
-.nav-header {
     background-color: var(--col-muted-plus);
 }
 
@@ -617,7 +619,8 @@ del {
 }
 
 /* Hovered Hyperlink Hover*/
-.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
+.markdown-preview-view mark > .external-link:hover, 
+.internal-link:hover {
     color: var(--col-ed-txt-highlight);
 }
 
