@@ -86,7 +86,7 @@ settings:
         max: 700
         step: 100
     - 
-        id: list-bullet
+        id: list-bullet-icon
         title: List bullet
         description: Select which symbol you want to use for lists.
         type: variable-select
@@ -98,6 +98,7 @@ settings:
             - "•"
             - '*'
             - '‣'
+            - '\200B'
 */
 /*█⬡*/
 
@@ -141,7 +142,6 @@ settings:
     --files-font-size: 1em;
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
-    --list-bullet: "‣";
 }
 
 .custom-mono-font {
@@ -309,11 +309,7 @@ body {
     --col-pr-bckg-quote-callout: var(--col-safety);
     --col-pr-bckg-quote-warning: var(--col-danger);
     --col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
-    --col-pr-txt-p: var(--col-base);
     --siz-pr-txt-p: var(--siz-txt-p);
-
-    --col-ul-bullet: var(--col-accent-plus);
-    --col-ol-bullet: var(--col-accent-plus);
 
 
 
@@ -434,6 +430,16 @@ body {
     --h5-line-height: auto;
     --h6-line-height: auto;
     --heading-spacing: calc(var(--p-spacing) * 2);
+
+/*    --list-numbered-style  list-style-type for numbered lists*/
+    --list-bullet-icon: "‣";
+    --list-bullet-radius: 25%; /* Obsidian default 50% creates circles, these remind me of CRTs. */
+    --list-marker-color: var(--col-accent-plus);
+    --list-bullet-size: 0.5em;
+/*    --list-padding-inline-start: 7em;*/
+/*    --list-indent: 2em;*/
+    --list-indent-reading: 2em;
+    --list-indent-editing: 2em;
 }
 
 .oled-background {
@@ -592,33 +598,35 @@ input.task-list-item-checkbox {
     /* NTS: Leave this one be, it changes Obsidian's default shading behavior. */
 }
 
-/* lists */
-.markdown-source-view.mod-cm6 .HyperMD-list-line .list-bullet:after {
-    height: 1.65em;
-    width: 1em;
-/*  border-radius: 50%;*/
-    background-color: transparent;
-    content: var(--list-bullet);
-    color: var(--col-ul-bullet);
-    font-weight: bold;
-} 
-
-/* UL text */
+/* Lists */
 .markdown-rendered ul.has-list-bullet {
     color: var(--col-ed-txt-p);
 }
 
-.markdown-source-view.mod-cm6 .cm-formatting-list-ul, 
-.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-    height: 1.65em;
-    width: 1em;
-/*  border-radius: 50%;*/
-    background-color: transparent;
-    content: var(--list-bullet);
-    color: var(--col-ol-bullet);
-    font-weight: bold;
-    padding-left: 20px;
+/* TODO: Redo the custom bullet points below. */
+/* from https://forum.obsidian.md/t/custom-bullet-point-help/96900 */
+/*
+:is(.cm-fold-indicator:hover,*) ~ .cm-formatting.cm-formatting-list .list-bullet::after,
+.list-bullet::after {
+    content: var(--list-bullet-icon);
+    height: 1.6em;
+    background-color: unset;
+    box-shadow: none;
 }
+*/
+
+.markdown-rendered ul,
+.markdown-rendered ol {
+    padding-left: var(--list-indent-reading);
+}
+
+/* These selectors come straight from Obsidian's CSS */
+.cm-s-obsidian .cm-formatting-list,
+ol > li::marker,
+ul > li::marker {
+    font-weight: var(--bold-weight);
+}
+
 
 /* ---------- WORKSPACE --------- */
 /* -------- PREVIEW MODE -------- */
@@ -686,43 +694,6 @@ em {
 /* Normal text */
 .markdown-preview-view p {
     color: var(--col-base);
-}
-
-/* Other */
-/* Horizontal rule */
-.markdown-preview-view hr {
-    border-color: var(--col-base);
-}
-
-/* Lists */
-ol > li::marker, .cm-s-obsidian .cm-formatting-list {
-    color: var(--col-ol-bullet);
-}
-
-.markdown-preview-view .list-bullet:after {
-    list-style-type: none;
-    height: 1.65em;
-    width: 1em;
-    border-radius: 50%;
-    background-color: transparent;
-    content: var(--list-bullet);
-    color: var(--col-ul-bullet);
-    font-weight: bold;
-} 
-
-
-.markdown-rendered ol {
-    padding-left: 1em;
-/*  line-height: 15px;*/
-}
-
-.markdown-rendered ul {
-    padding-left: 1em;
-/*  line-height: 15px;*/
-}   
-
-.markdown-preview-view ol>li {
-    color: var(--col-pr-txt-p);
 }
 
 /* Fix: Style Settings - UI Menu Font Sizes*/
