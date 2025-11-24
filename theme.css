@@ -125,10 +125,10 @@ settings:
     --font-monospace: "Kode Mono", var(--font-monospace-default);
 }
 
-/* Choose colors for light theme */
+/* TODO: Redo the light theme. */
 .theme-light {
     /* Custom Workspace Color Overrides */
-    --col-base-background: #D7DDD9; /*  */
+    /*--col-base-background: #D7DDD9;
     --col-base: #64A055; 
     --col-accent: #437A41; 
     --col-accent-plus: #20542C; 
@@ -138,10 +138,10 @@ settings:
     --col-important-muted: #3F8CFF; 
     --col-important-plus: #011F64; 
     --col-safety: #ACD580; 
-    --col-danger: #86C66C; 
+    --col-danger: #86C66C; */
     
     /* Custom Panels, and menus Color Overrides */
-    --col-bckg-mainpanels: var(--col-muted-plus);
+    /*--col-bckg-mainpanels: var(--col-muted-plus);
     --col-bckg-filetreeheader: var(--col-base-background);
     --col-txt-titlebars: #E5EAE7;
     --col-icons: var(--col-accent-plus);
@@ -152,10 +152,10 @@ settings:
     --col-txt-menudropdowns: var(--col-accent);
     --col-bckg-menudropdowns: var(--col-muted);
     --col-txt-menudropdownhover: var(--col-accent);
-    --col-bckg-menudropdownhover: var(--col-muted);
+    --col-bckg-menudropdownhover: var(--col-muted);*/
     
     /* Default Colours for Obsidian Panels */
-    --background-primary: var(--col-base-background);
+    /*--background-primary: var(--col-base-background);
     --background-primary-alt: black;
     --background-secondary: var(--col-base-background);
     --background-secondary-alt: var(--col-base-background);
@@ -184,7 +184,7 @@ settings:
     --interactive-hover: var(--col-muted);
     --interactive-accent-hsl: var(--col-accent);
     --interactive-accent: var(--col-accent);
-    --interactive-accent-hover: var(--col-accent-plus);
+    --interactive-accent-hover: var(--col-accent-plus);*/
 }
 
 /* Choose colors for dark theme */
