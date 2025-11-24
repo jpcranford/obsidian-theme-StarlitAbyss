@@ -20,8 +20,8 @@ settings:
                 label: CyberPink
                 value: 320
             - 
-                label: Dead Red
-                value: 5
+                label: Rogue AI Red
+                value: 0
             - 
                 label: Ominous Orange
                 value: 25
@@ -75,7 +75,28 @@ settings:
         id: mono-table
         title: Inverted table style
         description: Use an inverted style for tables.
-        type: class-toggle  
+        type: class-toggle
+    -
+        id: bold-weight
+        title: Bold weight
+        description: Play with the weight used for bold text. I should probably delete this before release.
+        type: variable-number-slider
+        default: 600
+        min: 600
+        max: 700
+        step: 100
+    - 
+        id: list-bullet
+        title: List bullet
+        description: Select which symbol you want to use for lists.
+        type: variable-select
+        default: ">"
+        options:
+            - ">"
+            - "+"
+            - "-"
+            - "•"
+            - '▪'
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Michroma&family=Kode+Mono:wght@400..700&family=Science+Gothic:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -100,7 +121,6 @@ settings:
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: #122127;
     --col-danger: #230D0D;
-    --col-txt-titlebars: black;
     
     /* Font Sizing and Styling DECLARATIONS */
     --siz-txt-title: 2em;
@@ -119,6 +139,7 @@ settings:
     --files-font-size: 1em;
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
+    --list-bullet: ">";
 }
 
 .custom-mono-font {
@@ -143,7 +164,6 @@ settings:
     /* Custom Panels, and menus Color Overrides */
     /*--col-bckg-mainpanels: var(--col-muted-plus);
     --col-bckg-filetreeheader: var(--col-base-background);
-    --col-txt-titlebars: #E5EAE7;
     --col-icons: var(--col-accent-plus);
     --col-txt-selectedtitles: var(--col-accent-plus);
     --col-bckg-selectedtitles: var(--col-muted);
@@ -190,6 +210,7 @@ settings:
 /* Choose colors for dark theme */
 .theme-dark {
     /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
+    /*  That's the '--accent-h' Obsidian variable, have to figure out a way to set it from the theme  */
     --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base: HSL(var(--col-accent-value), 47%, 47%);
     --col-accent: HSL(var(--col-accent-value), 100%, 62%);
@@ -202,16 +223,14 @@ settings:
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
-    --col-danger: var(--col-muted-plus);
+    --col-danger: red;
 
     /* Custom Panels, and menus Color Overrides */
     --col-bckg-mainpanels: var(--col-muted-plus);
     --col-bckg-filetreeheader: var(--col-base-background);
-    --col-txt-titlebars: #070707;
     --col-icons: var(--col-accent-plus);
     --col-txt-selectedtitles: var(--col-accent-plus);
     --col-bckg-selectedtitles: var(--col-muted);
-    --col-menucheckbox: var(--col-accent);
     --col-txt-menudropdowns: var(--col-accent);
     --col-bckg-menudropdowns: var(--col-muted);
     --col-txt-menudropdownhover: var(--col-accent);
@@ -243,17 +262,18 @@ settings:
     --text-accent: var(--col-accent-plus);
 /*    --text-accent-hover: var(--col-important-plus); */
 /* TODO: What does this do? ^^^^^ */
+
     --interactive-normal: var(--col-muted);
-    --interactive-hover: var(--col-base);
-    --interactive-accent-hsl: var(--col-accent);
+/*    --interactive-hover: var(--col-base);*/
     --interactive-accent: var(--col-accent);
+/*    --interactive-accent-hsl: var(--col-muted);*/
     --interactive-accent-hover: var(--col-accent-plus); 
 }
 
 /* -------- GLOBAL -------- */
 body {
     --font-interface-theme: var(--fnt-head-p);
-    
+
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
     --col-ed-background: var(--col-base-background);
@@ -280,7 +300,6 @@ body {
     --siz-ed-txt-h6: var(--siz-txt-h6);
     --fnt-ed-text: var(--fnt-head-p);
     --letterspacing-ed-text: var(--letterspacing-txt-p);
-    --col-ed-txt-strikethrough: var(--col-muted);
     --col-ed-txt-highlight: var(--col-muted-plus);
     --siz-ed-txt-highlight: var(--siz-txt-p);
     --col-ed-bckg-highlight: var(--col-base);
@@ -289,25 +308,10 @@ body {
     --col-ed-bckg-quote: var(--col-base-background);
     --col-ed-bckg-quote-callout: var(--col-safety);
     --col-ed-bckg-quote-warning: var(--col-danger);
-    --col-ed-txt-codeblock: var(--col-accent);
-    --siz-ed-txt-codeblock: var(--siz-txt-p);
-    --col-ed-bckg-codeblock: var(--col-muted);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
-    --col-ed-hyperlink-broken: red; /* Seems to not be possible to set this*/  
-    --col-ed-bckg-hyperlink-broken: var(--col-danger);
     --col-ed-txt-p: var(--col-base);
     --siz-ed-txt-p: var(--siz-txt-p);
-    --col-ed-bckg-checkbox-empty: var(--col-muted);
-    --col-ed-bckg-checkbox-full: var(--col-accent-plus);
-    --col-ed-txt-checkbox-full: var(--col-muted);
     --col-ed-hr: var(--col-base);
-    --col-ed-txt-tableh: var(--col-accent-plus);
-    --col-ed-txt-table: var(--col-base);
-    --siz-ed-txt-table: var(--siz-txt-p);
-    --col-ed-bckg-tableh: var(--col-muted);
-    --col-ed-bckg-table: var(--col-base-background);
-    --col-ed-txt-ul-bullet: var(--col-accent-plus);
-    --col-ed-txt-ol-bullet: var(--col-accent-plus);
     
     /* Preview mode variables */
     --col-pr-background: var(--col-base-background);
@@ -332,7 +336,6 @@ body {
     --siz-pr-txt-h6: var(--siz-txt-h6);
     --fnt-pr-text: var(--fnt-head-p);
     --letterspacing-pr-text: var(--letterspacing-txt-p);
-    --col-pr-txt-strikethrough: var(--col-muted);
     --col-pr-txt-highlight: var(--col-muted-plus);
     --siz-pr-txt-highlight: var(--siz-txt-p);
     --col-pr-bckg-highlight: var(--col-base);
@@ -341,43 +344,31 @@ body {
     --col-pr-bckg-quote: var(--col-base-background);
     --col-pr-bckg-quote-callout: var(--col-safety);
     --col-pr-bckg-quote-warning: var(--col-danger);
-    --col-pr-txt-codeblock: var(--col-accent);
-    --siz-pr-txt-codeblock: var(--siz-txt-p);
-    --col-pr-bckg-codeblock: var(--col-muted);
     --col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
-    --col-pr-txt-hyperlink-unresolved: var(--col-important);
-    --col-pr-hyperlink-broken: red;
     --col-pr-txt-p: var(--col-base);
     --siz-pr-txt-p: var(--siz-txt-p);
-    --col-pr-bckg-checkbox-empty: var(--col-muted);
-    --col-pr-bckg-checkbox-full: var(--col-accent-plus);
-    --col-pr-txt-checkbox-full: var(--col-muted);
     --col-pr-hr: var(--col-base);
-    --col-pr-txt-tableh: var(--col-accent-plus);
-    --col-pr-txt-table: var(--col-base);
-    --siz-pr-txt-table: var(--siz-txt-p);
-    --col-pr-bckg-tableh: var(--col-muted);
-    --col-pr-bckg-table: var(--col-base-background);
-    --col-pr-txt-ul-bullet: var(--col-accent-plus);
-    --col-pr-txt-ol-bullet: var(--col-accent-plus);
+
+    --col-ul-bullet: var(--col-accent-plus);
+    --col-ol-bullet: var(--col-accent-plus);
 
 /*  OBSIDIAN VARIABLES  */
 
-/*    --bold-weight: 900;*/
+    --bold-weight: 600;
 
-    --table-background: var(--col-pr-bckg-table);
+    --table-background: var(--col-base-background);
     --table-border-width: 2px;
-    --table-border-color: var(--col-pr-bckg-tableh);
+    --table-border-color: var(--col-muted);
 /*    --table-cell-vertical-alignment     Cell vertical alignment */ /* TODO: Play with this later */
-    --table-header-background: var(--col-pr-bckg-tableh);
-    --table-header-color: var(--col-ed-txt-tableh);
+    --table-header-background: var(--col-muted);
+    --table-header-background-hover: var(--col-muted);
+    --table-header-color: var(--col-accent-plus);
+    --table-header-border-color: var(--col-muted);
     --table-header-border-width: 2px;
     --table-column-first-border-width: 2px;
     --table-column-last-border-width: 2px;
-    --table-header-border-color: var(--col-pr-bckg-tableh);
-    --table-header-background-hover: var(--col-pr-bckg-tableh);
     --table-column-alt-background: unset !important; /* This is required for it not to happen. See https://forum.obsidian.md/t/unintended-coloring-for-alternating-columns-with-table-background/101721 */
-    --table-text-color: var(--col-ed-txt-table);
+    --table-text-color: var(--col-base);
 
     --heading-spacing: calc(var(--p-spacing) * 2);
 
@@ -388,11 +379,15 @@ body {
 
     --font-text-theme: var(--fnt-head-p);
 
-    --tab-divider-color: unset;
     --tag-color: var(--col-base-background);
     --tag-background: var(--col-base);
-    --tab-container-background: var(--col-txt-titlebars);
-    --ribbon-background: var(--col-txt-titlebars);
+
+    --tab-divider-color: unset;
+    --tab-container-background: var(--col-muted-plus);
+    --tab-background-active: var(--col-base-background);
+    --ribbon-background: var(--col-muted-plus);
+    --ribbon-background-collapsed: var(--col-base-background);
+    --titlebar-background: var(--col-muted-plus);
 
     --font-interface-theme: var(--fnt-head-p);
     --nav-item-color: var(--col-base);
@@ -400,7 +395,7 @@ body {
     --vault-profile-font-size: var(--col-base);
     --nav-heading-color: var(--col-accent);
 /*    --nav-item-weight-active: 900;*/
-    --canvas-card-label-color: var(--col-muted);
+    --canvas-card-label-color: var(--col-muted); /* col-base is too prominent, but when it's col-muted the hover color ('--text-muted', the color of the active tab, the file title, and some others) is too bright. */
 
 /*  .nav-file-title.is-active,  */
 /*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
@@ -411,6 +406,27 @@ body {
     --icon-color: var(--col-icons);
     --icon-color-hover: var(--col-icons);
     --icon-color-active: var(--col-txt-selectedtitles);
+
+    --code-background: var(--col-muted);
+    --code-size: var(--siz-txt-p);
+    --code-normal: var(--col-accent);
+
+    --checkbox-color: var(--col-accent-plus);
+/*    --checkbox-color-hover: var(--col-muted);*/
+    /* NOTE: Uncomment this line ^^^ to have checked checkboxes dim on hover  */
+    --checkbox-border-color: var(--col-muted);
+    --checkbox-border-color-hover: var(--col-accent-plus);
+    --checklist-done-color: var(--col-muted);
+    --checkbox-radius: 2px;
+
+/*base or muted for off*/
+/*accent or accent plus for on*/
+/*    --toggle-thumb-color: var(--col-muted);*/
+
+    --link-unresolved-color: var(--col-danger);
+    --link-unresolved-decoration-style: wavy;
+    --link-unresolved-decoration-color: var(--col-danger);
+
 }
 
 .oled-background {
@@ -424,13 +440,11 @@ body {
 }
 
 .mono-table {
-/* TODO: Fully convert from the old table CSS to Obsidian variables */
-    --col-ed-txt-tableh: var(--col-base-background);
-    --col-ed-bckg-tableh: var(--col-base);
-    --col-pr-txt-tableh: var(--col-base-background);
-    --col-pr-bckg-tableh: var(--col-base);
     --table-header-background: var(--col-base);
+    --table-header-background-hover: var(--col-base);
     --table-header-color: var(--col-base-background);
+    --table-header-border-color: var(--col-base);
+    --table-border-color: var(--col-base);
 }
 
 /* ----- OBSIDIAN PANELS ----- */
@@ -451,20 +465,15 @@ body {
 }
 
 /* Left and Top bars */
-.workspace-ribbon, .workspace-ribbon.mod-left, .workspace-ribbon .sidebar-toggle-button,
-.workspace-tab-header, 
+.workspace-ribbon .sidebar-toggle-button,
 .workspace-tab-header-container,
 .titlebar-button  {
-    background-color:   var(--col-txt-titlebars);
+    background-color: var(--col-muted-plus);
 }
 
-/* Checkboxes */
-.checkbox-container {
-    background-color: var(--col-muted);
-}
-
-.checkbox-container.is-enabled {
-    background-color: var(--col-menucheckbox);
+/* NOTE: Unsure about this look. */
+.nav-header {
+    background-color: var(--col-muted-plus);
 }
 
 /* Dropdowns (settings) */
@@ -567,10 +576,14 @@ body {
 
 /* Text Formatting*/
 /* Strikethrough */
-.mod-cm6 .cm-editor .cm-strikethrough,
-.mod-cm6 .cm-editor .cm-strikethrough >*,
-.mod-cm6 .cm-editor .cm-strikethrough ~* {
-    color: var(--col-ed-txt-strikethrough);
+.cm-strikethrough,
+.cm-strikethrough >*,
+.cm-strikethrough ~* {
+    color: var(--col-muted);
+}
+
+del {
+    color: var(--col-muted);
 }
 
 /* Highlight */
@@ -603,59 +616,28 @@ body {
     background-color: var(--col-ed-bckg-quote-warning);
 }
 
-/* Codeblock */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-    color: var(--col-ed-txt-codeblock);
-    background-color: var(--col-ed-bckg-codeblock);
-    font-size: var(--siz-ed-txt-codeblock);
-}
-
-/* Unresolved Hyperlink */ 
-.markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
-    color: var(--col-pr-hyperlink-broken) !important;
-}
-
 /* Hovered Hyperlink Hover*/
 .markdown-preview-view mark > .external-link:hover, .internal-link:hover {
     color: var(--col-ed-txt-highlight);
 }
 
 /* Hyperlink in a callout */
-.markdown-rendered .callout > .external-link, .internal-link {
+.markdown-rendered .callout > .external-link, 
+.internal-link {
     color: var(--col-ed-text-hyperlink);
     background-color: inherit;
 }
 
 /* Hyperlink in a warning */
-.markdown-rendered .callout[data-callout="warning"] > .external-link, .internal-link {
+.markdown-rendered .callout[data-callout="warning"] > .external-link, 
+.internal-link {
     background-color: inherit;
 }
 
-/* Hyperlink Strikethrough */
-.markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
-    color: var(--col-important-muted);
-}
-
-
+/* NTS: Leave this checkbox boxes be, it changes Obsidian's default shading behavior. */
 /* Checkbox unchecked */
-.cm-editor input.task-list-item-checkbox {
-    color: var(--col-ed-bckg-checkbox-empty);
-    background-color: var(--col-ed-bckg-checkbox-empty);
-    border-color: var(--col-ed-bckg-checkbox-empty);
-}
-
-/* Checkbox checked */
-.cm-editor input[type=checkbox]:checked {
-    color: var(--col-ed-bckg-checkbox-full);
-    background-color: var(--col-ed-bckg-checkbox-full);
-    border-color:  var(--col-accent-plus);
-}
-
-/* Checkbox checked content */
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > *, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > *,
- .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] ~ * {
-    color: var(--col-ed-txt-checkbox-full) !important;
+input.task-list-item-checkbox {
+    background-color: var(--col-muted);
 }
 
 /* Normal text */
@@ -676,8 +658,8 @@ hr {
     width: 1em;
 /*  border-radius: 50%;*/
     background-color: transparent;
-    content:'>';
-    color: var(--col-ed-txt-ul-bullet);
+    content: var(--list-bullet);
+    color: var(--col-ul-bullet);
     font-weight: bold;
 } 
 
@@ -686,13 +668,14 @@ hr {
     color: var(--col-ed-txt-p);
 }
 
-.markdown-source-view.mod-cm6 .cm-formatting-list-ul, .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul, 
+.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
     height: 1.65em;
     width: 1em;
 /*  border-radius: 50%;*/
     background-color: transparent;
-    content:'>';
-    color: var(--col-ed-txt-ol-bullet);
+    content: var(--list-bullet);
+    color: var(--col-ol-bullet);
     font-weight: bold;
     padding-left: 20px;
 }
@@ -771,17 +754,16 @@ hr {
 strong {
     color: var(--col-accent);
     font-size: var(--siz-txt-p);
+    font-weight: var(--bold-weight);
 }
 
 em {
     color: var(--col-accent);
 }
 
-/* Strikethrough */ 
-.markdown-preview-view del,
-.markdown-preview-view del >*,
-.markdown-preview-view del ~* {
-    color: var(--col-pr-txt-strikethrough);
+/* Hyperlink Strikethrough */
+.markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
+    color: var(--col-muted);
 }
 
 /* Highlight */
@@ -814,65 +796,47 @@ em {
     background-color: var(--col-pr-bckg-quote-warning);
 }
 
-/* Codeblock */
-.markdown-rendered pre {
-    color: var(--col-pr-txt-codeblock);
-    background-color: var(--col-pr-bckg-codeblock);
-    font-size: var(--siz-pr-txt-codeblock);
-}
-
 /* Highlighted Hyperlink */
 .cm-editor span.cm-highlight > .cm-underline {
     color: var(--col-pr-txt-highlight);
     background-color: var(--col-pr-txt-hyperlink);
 }
 
-/*Checkbox unchecked */
-.markdown-preview-view input.task-list-item-checkbox {
-    background-color: var(--col-pr-bckg-checkbox-empty);
-    border-color: var(--col-pr-bckg-checkbox-empty);
-}
-
-/* Checkbox checked */
-.markdown-preview-view input[type=checkbox]:checked {
-    background-color: var(--col-pr-bckg-checkbox-full);
-    border-color: var(--col-pr-bckg-checkbox-full);
-}
-
-/* Checkbox Checked Content */
-.markdown-preview-view ul>li.task-list-item.is-checked,
-.markdown-preview-view ul>li.task-list-item.is-checked > *,
-.task-list-item-checkbox:checked ~ * {
-    color: var(--col-pr-txt-checkbox-full);
-}
-
 /* Normal text */
 .markdown-preview-view p {
-    color: var(--col-pr-txt-p);
-/*  font-size: var(--siz-pr-txt-p);*/
+    color: var(--col-base);
 }
 
 /* Other */
 /* Horizontal rule */
 .markdown-preview-view hr {
-    border-color: var(--col-pr-hr);
+    border-color: var(--col-base);
 }
 
 /* Lists */
 ol > li::marker, .cm-s-obsidian .cm-formatting-list {
-    color: var(--col-pr-txt-ol-bullet);
+    color: var(--col-ol-bullet);
 }
 
 .markdown-preview-view .list-bullet:after {
     list-style-type: none;
     height: 1.65em;
     width: 1em;
-/*    border-radius: 50%;*/
+    border-radius: 50%;
     background-color: transparent;
-    content:'>';
-    color: var(--col-pr-txt-ul-bullet);
+    content: var(--list-bullet);
+    color: var(--col-ul-bullet);
     font-weight: bold;
 } 
+
+/*.list-bullet::after { 
+    display: none; 
+} 
+.is-live-preview .list-bullet, 
+.markdown-reading-view ul.has-list-bullet li::marker { 
+    color: var(--list-marker-color); 
+    content: "- "; 
+}*/
 
 .markdown-rendered ol {
     padding-left: 1em;
@@ -888,7 +852,8 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
     color: var(--col-pr-txt-p);
 }
 
-/*Fixes for Style Settings UI Menu*/
+/* Fix: Style Settings - UI Menu Font Sizes*/
+
 div.setting-item-description > div > small {
     font-size: var(--font-ui-smaller);
 }
@@ -900,3 +865,17 @@ div.setting-item-description > div > small {
 div.setting-item-description > div > small > strong {
     font-size: var(--font-ui-smaller);
 }
+
+
+/* Fix: Settings toggles - Wrong colors */
+
+.mod-toggle .checkbox-container {
+    background-color: var(--interactive-normal);
+}
+
+.mod-toggle .checkbox-container.is-enabled {
+    background-color: var(--interactive-accent);
+}
+
+/* Fixme: Canvas - Tables have borders */
+
