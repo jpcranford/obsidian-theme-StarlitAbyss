@@ -114,7 +114,6 @@ settings:
     --files-font-size: 1em;
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
-    --text-selection: var(--col-base);
 }
 
 .custom-mono-font {
@@ -198,6 +197,7 @@ settings:
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
     --col-muted: HSL(var(--col-accent-value), 48%, 17%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
+    --col-text-selection: HSL(var(--col-accent-value), 45%, 30%);
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
     --col-important-plus: #FFF2BF;
