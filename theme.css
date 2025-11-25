@@ -325,6 +325,7 @@ body {
     --table-column-last-border-width: 2px;
     --table-column-alt-background: unset !important; /* This is required for it not to happen. See https://forum.obsidian.md/t/unintended-coloring-for-alternating-columns-with-table-background/101721 */
     --table-text-color: var(--col-base);
+    --table-add-button-border-color: var(--table-border-color);
 
     --link-external-color: var(--col-accent);
     --link-external-color-hover: var(--col-accent-plus);
@@ -735,3 +736,21 @@ div.setting-item-name {
 /*div.vertical-tab-nav-item {
     color: var(--col-accent-plus);
 }*/
+
+/* Fix: Table add row/column buttons too dim */
+.cm-table-widget {
+    padding-bottom: 30px !important; /* This !important is necessary to avoid the bigger row add button getting cut off by the following .cm-line */
+}
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
+    height: calc(var(--table-drag-handle-size) + 10px);
+    min-height: calc(var(--table-drag-handle-size) + 10px);
+}
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn,
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
+    svg {
+        stroke-width: 4px;
+        width: 1em;
+        height: 1em;
+        display: block;
+    }
+}
