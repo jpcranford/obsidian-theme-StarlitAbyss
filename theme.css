@@ -274,7 +274,6 @@ body {
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
     --col-ed-background: var(--col-base-background);
-    --col-ed-caret: var(--col-accent-plus);
     --pad-ed-headers: 5px;
     --fnt-ed-text: var(--fnt-head-p);
     --letterspacing-ed-text: var(--letterspacing-txt-p);
@@ -311,6 +310,7 @@ body {
 /*  OBSIDIAN VARIABLES  */
 
     --bold-weight: 600;
+    --caret-color: var(--col-accent-plus);   
 
     --table-background: var(--col-base-background);
     --table-border-width: 2px;
@@ -506,7 +506,6 @@ body {
     background-color: var(--col-ed-background);
     font-family: var(--fnt-ed-text);
     letter-spacing: var(--letterspacing-ed-text);
-    caret-color: var(--col-ed-caret);   
 }
 
 /* The below is the little "/a" to the right of an editing view. Commented out bc I can't stand the off-center editor it causes. */
