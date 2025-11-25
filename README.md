@@ -1,4 +1,4 @@
-- [ ] TODO: Screenshot here
+![Theme preview](img/theme.png)
 
 A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted in popular 80s sci-fi films.
 
@@ -15,17 +15,22 @@ Download this repo folder, extract, then place into your Obsidian's themes folde
 ## Features
 Various bug fixes from the original theme, [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole)
 
-Multiple color themes:
-- [ ] TODO: Screenshot(s) here
+Color themes:
+|                                                        |                                                       |
+|:------------------------------------------------------:|:-----------------------------------------------------:|
+|  ![Terminal Green](img/theme.png)<br>*Terminal Green*  |     ![CyberPink](img/col-pink.png)<br>*CyberPink*     |
+|   ![Rogue AI Red](img/col-red.png)<br>*Rogue AI Red*   | ![Ominous Orange](img/col-or.png)<br>*Ominous Orange* |
+| ![Ypsilon Yellow](img/col-yel.png)<br>*Ypsilon Yellow* |  ![Moonbase Blue](img/col-bl.png)<br>*Moonbase Blue*  |
 
 Choice of fonts:
 - [ ] TODO: Screenshot here
 
 OLED mode (pure black background):
-- [ ] TODO: Screenshot here
+![](img/ft-oled.png)
 
 Additional "inverted table" style:
-- [ ] TODO: Screenshot here
+![](img/ft-table-normal.png) ![](img/ft-table-invert.png)
+
 
 ## Supported Plugins
 * Style Settings *(required)*
