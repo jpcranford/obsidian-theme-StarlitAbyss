@@ -79,7 +79,7 @@ settings:
     -
         id: bold-weight
         title: Bold weight
-        description: Play with the weight used for bold text. I should probably delete this before release.
+        description: Play with the weight used for bold text. I should probably pick one and delete this before release.
         type: variable-number-slider
         default: 600
         min: 600
@@ -88,7 +88,7 @@ settings:
     - 
         id: list-bullet-icon
         title: List bullet
-        description: Select which symbol you want to use for lists.
+        description: Select which symbol you want to use for lists. Not currently working.
         type: variable-select
         default: "‣"
         options:
@@ -228,11 +228,6 @@ settings:
     --col-danger: red;
 
     /* Custom Panels, and menus Color Overrides */
-    --col-bckg-mainpanels: var(--col-muted-plus);
-    --col-bckg-filetreeheader: var(--col-base-background);
-    --col-icons: var(--col-accent-plus);
-    --col-txt-selectedtitles: var(--col-accent-plus);
-    --col-bckg-selectedtitles: var(--col-muted);
     --col-txt-menudropdowns: var(--col-accent);
     --col-bckg-menudropdowns: var(--col-muted);
     --col-txt-menudropdownhover: var(--col-accent);
@@ -361,13 +356,15 @@ body {
 
 /*  .nav-file-title.is-active,  */
 /*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
-    --nav-item-color-active: var(--col-txt-selectedtitles);
-    --nav-item-background-active: var(--col-bckg-selectedtitles);
+    --nav-item-color-active: var(--col-accent-plus);
+    --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
+    --tab-text-color-focused-active-current: var(--col-accent-plus);
 
-    --icon-color: var(--col-icons);
-    --icon-color-hover: var(--col-icons);
-    --icon-color-active: var(--col-txt-selectedtitles);
+    --icon-color: var(--col-accent-plus);
+    --icon-color-hover: var(--col-accent-plus);
+    --icon-color-active: var(--col-accent-plus);
+    --icon-color-focused: var(--col-accent-plus);
 
     --code-background: var(--col-muted);
     --code-size: var(--siz-txt-p);
@@ -416,7 +413,7 @@ body {
     --h4-font: var(--fnt-head-p);
     --h5-font: var(--fnt-head-p);
     --h6-font: var(--fnt-head-p);
-    --h1-weight: var(--bold-weight); /* Obsidian default = 700, all other headings are 600. Make 'em match.*/
+    --h1-weight: var(--bold-weight); /* Obsidian default for this = 700, all other headings are 600. Make 'em match.*/
     --h2-weight: var(--bold-weight);
     --h3-weight: var(--bold-weight);
     --h4-weight: var(--bold-weight);
@@ -474,12 +471,12 @@ body {
 .file-tree-header-fixed,
 .view-content
 {
-    background-color: var(--col-bckg-mainpanels);
+    background-color: var(--col-muted-plus);
 }
 
 /* File Tree Header */
 .file-tree-header-fixed {
-    background-color: var(--col-bckg-filetreeheader);
+    background-color: var(--col-base-background);
 }
 
 /* Left and Top bars */
@@ -599,10 +596,6 @@ input.task-list-item-checkbox {
 }
 
 /* Lists */
-.markdown-rendered ul.has-list-bullet {
-    color: var(--col-ed-txt-p);
-}
-
 /* TODO: Redo the custom bullet points below. */
 /* from https://forum.obsidian.md/t/custom-bullet-point-help/96900 */
 /*
@@ -727,4 +720,18 @@ div.setting-item-description > div > small > strong {
 .canvas-node div.el-table > * {
     border-collapse: collapse;
     border-left-color: var(--table-border-color);
+}*/
+
+/* Window controls */
+
+/*div.sidebar-toggle-button.mod-right::after {
+    color: var(--icon-color);
+}*/
+
+div.setting-item-name {
+    color: var(--col-accent-plus);
+}
+
+/*div.vertical-tab-nav-item {
+    color: var(--col-accent-plus);
 }*/
