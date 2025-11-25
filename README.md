@@ -4,33 +4,34 @@ A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted
 
 "Starlit Abyss" is based on Satchelmouth's excellent [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole).
 
-This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. While the theme _should_ work without it, several cool features require the plugin in order to be switched on.
 
 ## Installation
+> [!WARNING]
+> This theme is very much a work in progress. I've got a to-do list on this a mile long, so it may take some time until it's released onto Obsidian's in-app picker. If anyone is reading this and is interested in helping out, open an issue and I'll share the list.
 
-> **Warning!** This thing is still very much a work in progress. I've got a to-do list on this, so it may take some time. If anyone is reading this and is interested, open an issue and I'll share the list.
-
-Download this repo folder, extract, then place into your Obsidian's themes folder. According to Obsidian docs, the containing folder **must** be named "Starlit Abyss" for it to work.
+To install, download this repo folder, extract, then place the folder into your Obsidian's themes folder. According to Obsidian docs, the containing folder **must** be named "Starlit Abyss" for it to work.
 
 ## Features
-Various bug fixes from the original theme, [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole)
-
-Color themes:
+### Color themes
 |                                                        |                                                       |
 |:------------------------------------------------------:|:-----------------------------------------------------:|
 |  ![Terminal Green](img/theme.png)<br>*Terminal Green*  |     ![CyberPink](img/col-pink.png)<br>*CyberPink*     |
 |   ![Rogue AI Red](img/col-red.png)<br>*Rogue AI Red*   | ![Ominous Orange](img/col-or.png)<br>*Ominous Orange* |
 | ![Ypsilon Yellow](img/col-yel.png)<br>*Ypsilon Yellow* |  ![Moonbase Blue](img/col-bl.png)<br>*Moonbase Blue*  |
 
-Choice of fonts:
+### Multiple fonts:
 - [ ] TODO: Screenshot here
 
-OLED mode (pure black background):
+### OLED mode (pure black background):
+
 ![](img/ft-oled.png)
 
-Additional "inverted table" style:
-![](img/ft-table-normal.png) ![](img/ft-table-invert.png)
+### Additional "inverted table" style:
 
+| Normal table | Inverted table |
+|:---:|:---:|
+| ![](img/ft-table-normal.png) | ![](img/ft-table-invert.png) |
 
 ## Supported Plugins
 * Style Settings *(required)*
@@ -40,4 +41,5 @@ Additional "inverted table" style:
 * File Tree Alternative Plugin
 
 ## Wishlist
+
 - Custom caret *- unfortunately, without some JS coding I'm SOL on this one until CSS 4 drops and Obsidian integrates it. The general idea is to make the caret a box caret, like on old computer terminals. If anyone knows a way to accomplish this, a PR is more than welcome.*
