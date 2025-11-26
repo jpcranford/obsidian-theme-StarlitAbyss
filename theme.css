@@ -276,6 +276,7 @@ body {
     --text-highlight-color: var(--col-muted-plus);
     --bold-weight: calc(var(--font-weight) + var(--bold-modifier)); /* --bold-modifier is 200 by default, so this value is 600) */
     --callout-txt-color: var(--col-accent-plus);
+    --hr-style: dashed;
 
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
@@ -369,7 +370,7 @@ body {
 /*    --toggle-thumb-color: var(--col-muted);*/
 
     --hr-color: var(--col-base);
-    --hr-thickness: 2px;
+    --hr-thickness: 4px;
 
     --inline-title-font: var(--fnt-title);
     --inline-title-size: var(--siz-txt-title);
@@ -637,6 +638,13 @@ ul > li::marker {
 /* Hyperlink Strikethrough */
 .markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
     color: var(--col-muted);
+}
+
+hr {
+  border-top: var(--hr-thickness) var(--hr-style);
+}
+.markdown-rendered hr {
+  border-top: var(--hr-thickness) var(--hr-style);
 }
 
 /* Fix: Style Settings - UI Menu Font Sizes*/
