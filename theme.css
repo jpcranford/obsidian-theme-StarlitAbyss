@@ -76,15 +76,6 @@ settings:
         title: Inverted table style
         description: Use an inverted style for tables.
         type: class-toggle
-    -
-        id: bold-weight
-        title: Bold weight
-        description: Play with the weight used for bold text. I should probably pick one and delete this before release.
-        type: variable-number-slider
-        default: 600
-        min: 600
-        max: 700
-        step: 100
     - 
         id: list-bullet-icon
         title: List bullet
@@ -225,7 +216,7 @@ settings:
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
-    --col-danger: red;
+    --col-danger: #381515;
 
     /* Custom Panels, and menus Color Overrides */
     --col-txt-menudropdowns: var(--col-accent);
@@ -269,7 +260,11 @@ settings:
 
 /* -------- GLOBAL -------- */
 body {
+    /*  CUSTOM VARIABLES  */
     --font-interface-theme: var(--fnt-head-p);
+    --text-highlight-color: var(--col-muted-plus);
+    --bold-weight: calc(var(--font-weight) + var(--bold-modifier)); /* --bold-modifier is 200 by default, so this value is 600) */
+    --callout-txt-color: var(--col-accent-plus);
 
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
@@ -278,38 +273,13 @@ body {
     --fnt-ed-text: var(--fnt-head-p);
     --letterspacing-ed-text: var(--letterspacing-txt-p);
     --col-ed-txt-highlight: var(--col-muted-plus);
-    --siz-ed-txt-highlight: var(--siz-txt-p);
-    --col-ed-bckg-highlight: var(--col-base);
-    --col-ed-txt-quote: var(--col-accent-plus);
-    --siz-ed-txt-quote: var(--siz-txt-p);
-    --col-ed-bckg-quote: var(--col-base-background);
-    --col-ed-bckg-quote-callout: var(--col-safety);
-    --col-ed-bckg-quote-warning: var(--col-danger);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
-    
-    /* Preview mode variables */
-    --col-pr-background: var(--col-base-background);
-    --line-height-pr-text: auto;
-    --col-pr-txt-title: var(--col-accent-plus);
-    --siz-pr-txt-title: var(--siz-txt-title);
-    --fnt-pr-text: var(--fnt-head-p);
-    --letterspacing-pr-text: var(--letterspacing-txt-p);
-    --col-pr-txt-highlight: var(--col-muted-plus);
-    --siz-pr-txt-highlight: var(--siz-txt-p);
-    --col-pr-bckg-highlight: var(--col-base);
-    --col-pr-txt-quote: var(--col-accent-plus);
-    --siz-pr-txt-quote: var(--siz-txt-p);
-    --col-pr-bckg-quote: var(--col-base-background);
-    --col-pr-bckg-quote-callout: var(--col-safety);
-    --col-pr-bckg-quote-warning: var(--col-danger);
-    --col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
-    --siz-pr-txt-p: var(--siz-txt-p);
 
 
+    /*  OBSIDIAN VARIABLES  */
+    --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
 
-/*  OBSIDIAN VARIABLES  */
-
-    --bold-weight: 600;
+    --bold-color: var(--col-accent);
     --caret-color: var(--col-accent-plus);   
 
     --table-background: var(--col-base-background);
@@ -334,8 +304,6 @@ body {
     --link-unresolved-color: var(--col-danger);
     --link-unresolved-decoration-style: wavy;
     --link-unresolved-decoration-color: var(--col-danger);
-
-    --font-text-theme: var(--fnt-head-p);
 
     --tag-color: var(--col-base-background);
     --tag-background: var(--col-base);
@@ -370,6 +338,12 @@ body {
     --code-background: var(--col-muted);
     --code-size: var(--siz-txt-p);
     --code-normal: var(--col-accent);
+
+/*    --list-numbered-style  list-style-type for numbered lists*/
+    --list-bullet-icon: "‣";
+    --list-bullet-radius: 30%; /* Obsidian default 50% creates circles, these remind me of CRTs. */
+    --list-bullet-size: 0.4em;
+    --list-marker-color: var(--col-accent-plus);
 
     --checkbox-color: var(--col-accent-plus);
 /*    --checkbox-color-hover: var(--col-muted);*/
@@ -429,21 +403,39 @@ body {
     --h6-line-height: auto;
     --heading-spacing: calc(var(--p-spacing) * 2);
 
-/*    --list-numbered-style  list-style-type for numbered lists*/
-    --list-bullet-icon: "‣";
-    --list-bullet-radius: 25%; /* Obsidian default 50% creates circles, these remind me of CRTs. */
-    --list-marker-color: var(--col-accent-plus);
-    --list-bullet-size: 0.5em;
-/*    --list-padding-inline-start: 7em;*/
-/*    --list-indent: 2em;*/
-    --list-indent-reading: 2em;
-    --list-indent-editing: 2em;
+    --blockquote-border-thickness: 4px;
+    --blockquote-border-color: var(--col-base);
+/*    --blockquote-background-color: var(--col-muted-plus);*/
+/* ^^^ didn't need this, leaving it in just in case I do in future */
+
+    --callout-default:   var(--col-muted);
+    --callout-bug:       var(--col-muted);
+    --callout-error:     var(--col-danger);
+    --callout-example:   var(--col-muted);
+    --callout-fail:      var(--col-muted);
+    --callout-important: var(--col-muted);
+    --callout-info:      var(--col-muted);
+    --callout-question:  var(--col-muted);
+    --callout-quote:     var(--col-muted);
+    --callout-success:   var(--col-muted);
+    --callout-summary:   var(--col-muted);
+    --callout-tip:       var(--col-muted);
+    --callout-todo:      var(--col-muted);
+    --callout-warning:   var(--col-danger);
+/*    --callout-border-color: var(--table-border-color);*/
+/*    --callout-border-width: 4px;*/
+/*    --callout-radius*/
+
+    --code-background: var(--col-muted-plus);
+    --code-border-color: var(--col-muted);
+/*    --code-border-width: 4px;*/
+    --text-highlight-bg: var(--col-base);
 }
 
 .oled-background {
     --col-base-background: black;
     --tab-outline-color: var(--col-accent);
-/*  TODO: inactive tabs' border-bottom should also be --col-accent  */
+/*    --code-background: black;*/
 }
 
 .bright-table-text {
@@ -541,33 +533,19 @@ del {
 }
 
 /* Highlight */
-.cm-editor span.cm-highlight {
-    color: var(--col-ed-txt-highlight);
-    background-color: var(--col-ed-bckg-highlight);
-    font-size: var(--siz-ed-txt-highlight);
+.cm-editor span.cm-highlight,
+.markdown-preview-view mark {
+    color: var(--text-highlight-color);
+}
+/* Highlighted Hyperlink */
+.cm-editor span.cm-highlight > .cm-underline {
+    color: var(--col-muted-plus);
 }
 
-/* Quote */
-.cm-editor span.cm-quote {
-    color: var(--col-ed-txt-quote);
-    background-color: var(--col-ed-bckg-quote);
-    font-size: var(--siz-ed-txt-quote);
-}
-
-/* Callout */
-.markdown-source-view.mod-cm6 .callout {
-    background-color: var(--col-ed-bckg-quote-callout);
-}
-
-/* Callout icon and text */
-.markdown-source-view.mod-cm6  .callout-title-inner, .markdown-source-view.mod-cm6 .callout-icon .svg-icon {
-        color: var(--col-ed-txt-quote);
-}
-
-/* Warning */
-.markdown-source-view.mod-cm6 .callout[data-callout="warning"] {
-    color: var(--col-ed-txt-quote);
-    background-color: var(--col-ed-bckg-quote-warning);
+.callout {
+/*    border-color: rgba(var(--callout-color), var(--callout-border-opacity));*/
+    background-color: var(--callout-color); /* Overrides Obsidian making this transparent af by default */
+    color: var(--callout-txt-color);
 }
 
 /* Hovered Hyperlink Hover*/
@@ -626,19 +604,11 @@ ul > li::marker {
 
 /* Body */
 .markdown-preview-view {
-    background-color: var(--col-pr-background);
-    font-family: var(--fnt-pr-text);
-    letter-spacing: var(--letterspacing-pr-text);
-    font-size: var(--siz-pr-txt-p);
+    letter-spacing: var(--letterspacing-txt-p);
+    /* NTS: Leave this one be, it changes Obsidian's default behavior. */
 }
 
 /* Text Formatting */
-strong {
-    color: var(--col-accent);
-    font-size: var(--siz-txt-p);
-    font-weight: var(--bold-weight);
-}
-
 em {
     color: var(--col-accent);
 }
@@ -646,47 +616,6 @@ em {
 /* Hyperlink Strikethrough */
 .markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
     color: var(--col-muted);
-}
-
-/* Highlight */
-.markdown-preview-view mark {
-    color: var(--col-ed-txt-highlight);
-    background-color: var(--col-ed-bckg-highlight);
-    font-size: var(--siz-pr-txt-highlight);
-}
-
-/* Quote */
-.markdown-rendered blockquote > p{
-    color: var(--col-pr-txt-quote);
-    background-color: var(--col-pr-bckg-quote);
-    font-size: var(--siz-pr-txt-quote);
-}
-
-/* Callout */
-.markdown-rendered .callout{
-    background-color: var(--col-pr-bckg-quote-callout);
-}
-
-/* Callout icon and text */
-.markdown-rendered  .callout-title-inner, .markdown-rendered .callout-icon .svg-icon {
-    color: var(--col-pr-txt-quote);
-}
-
-/* Warning */
-.markdown-rendered .callout[data-callout="warning"] {
-    color: var(--col-pr-txt-quote);
-    background-color: var(--col-pr-bckg-quote-warning);
-}
-
-/* Highlighted Hyperlink */
-.cm-editor span.cm-highlight > .cm-underline {
-    color: var(--col-pr-txt-highlight);
-    background-color: var(--col-pr-txt-hyperlink);
-}
-
-/* Normal text */
-.markdown-preview-view p {
-    color: var(--col-base);
 }
 
 /* Fix: Style Settings - UI Menu Font Sizes*/
