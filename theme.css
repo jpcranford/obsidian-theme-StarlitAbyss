@@ -290,6 +290,7 @@ body {
 
     /*  OBSIDIAN VARIABLES  */
     --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
+    --code-comment: var(--col-muted);
 
     --caret-color: var(--col-accent-plus);   
 
