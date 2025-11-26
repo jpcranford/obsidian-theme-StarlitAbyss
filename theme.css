@@ -42,18 +42,6 @@ settings:
         description: Use a brighter color for text inside tables.
         type: class-toggle
     - 
-        id: fnt-title
-        title: Title font
-        description: Select a font to be used for note titles.
-        type: variable-select
-        default: Michroma
-        options:
-            - Michroma
-            - Bruno Ace
-            - 
-                label: Match main font
-                value: var(--fnt-head-p)
-    - 
         id: fnt-head-p
         title: Main font
         description: Select a suitably sci-fi font for most text. Alternatives for the most famous have been provided- Eurostile Extended (Michroma), OCR-A (Kode Mono), and Bank Gothic (Science Gothic).
@@ -65,6 +53,18 @@ settings:
             - Michroma
             - Kode Mono
             - Segoe UI
+    - 
+        id: fnt-title
+        title: Title font
+        description: Select a font to be used for note titles.
+        type: variable-select
+        default: Michroma
+        options:
+            - Michroma
+            - Bruno Ace
+            - 
+                label: Match main font
+                value: var(--fnt-head-p)
     -
         id: custom-mono-font
         title: Custom monospace font
@@ -90,6 +90,17 @@ settings:
             - '*'
             - '‣'
             - '\200B'
+    -
+        id: retro-emphasis
+        title: Retro emphasis mode
+        description: In Reading view, bolded text will become ALL CAPS. Does not affect editing view.
+        type: class-toggle
+    -
+        id: bright-emphasis
+        title: Brighten bold and italic text
+        description: For extra emphasis.
+        default: true
+        type: class-toggle
 */
 /*█⬡*/
 
@@ -226,7 +237,7 @@ settings:
     
     /* Default Colours for Obsidian Panels */
     --background-primary: var(--col-base-background);
-    --background-primary-alt: black;
+/*    --background-primary-alt: black;*/
     --background-secondary: var(--col-base-background);
     --background-secondary-alt: var(--col-base-background);
     --background-modifier-hover: var(--col-muted);
@@ -275,11 +286,9 @@ body {
     --col-ed-txt-highlight: var(--col-muted-plus);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
 
-
     /*  OBSIDIAN VARIABLES  */
     --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
 
-    --bold-color: var(--col-accent);
     --caret-color: var(--col-accent-plus);   
 
     --table-background: var(--col-base-background);
@@ -343,15 +352,17 @@ body {
     --list-bullet-icon: "‣";
     --list-bullet-radius: 30%; /* Obsidian default 50% creates circles, these remind me of CRTs. */
     --list-bullet-size: 0.4em;
-    --list-marker-color: var(--col-accent-plus);
+    --list-marker-color: var(--col-base);
 
-    --checkbox-color: var(--col-accent-plus);
+    --checkbox-color: var(--col-accent);
 /*    --checkbox-color-hover: var(--col-muted);*/
     /* NOTE: Uncomment this line ^^^ to have checked checkboxes dim on hover  */
     --checkbox-border-color: var(--col-muted);
     --checkbox-border-color-hover: var(--col-accent-plus);
     --checklist-done-color: var(--col-muted);
     --checkbox-radius: 2px;
+
+    --text-highlight-bg: var(--col-accent);
 
 /*base or muted for off*/
 /*accent or accent plus for on*/
@@ -388,6 +399,7 @@ body {
     --h4-font: var(--fnt-head-p);
     --h5-font: var(--fnt-head-p);
     --h6-font: var(--fnt-head-p);
+/*  TODO: Redo these to work better with Obsidian's bold-modifier var  */
     --h1-weight: var(--bold-weight); /* Obsidian default for this = 700, all other headings are 600. Make 'em match.*/
     --h2-weight: var(--bold-weight);
     --h3-weight: var(--bold-weight);
@@ -429,7 +441,6 @@ body {
     --code-background: var(--col-muted-plus);
     --code-border-color: var(--col-muted);
 /*    --code-border-width: 4px;*/
-    --text-highlight-bg: var(--col-base);
 }
 
 .oled-background {
@@ -448,6 +459,21 @@ body {
     --table-header-color: var(--col-base-background);
     --table-header-border-color: var(--col-base);
     --table-border-color: var(--col-base);
+}
+
+.retro-emphasis {
+/*  Uncomment line below to apply it to editing mode text as well.  */
+/*    .cm-strong,*/
+    b,
+    strong {
+        font-weight: var(--font-weight);
+        text-transform: uppercase;
+    }
+}
+
+.bright-emphasis {
+    --bold-color: var(--col-accent);
+    --italic-color: var(--col-accent);
 }
 
 /* NOTE: Unsure about this look. */
@@ -606,11 +632,6 @@ ul > li::marker {
 .markdown-preview-view {
     letter-spacing: var(--letterspacing-txt-p);
     /* NTS: Leave this one be, it changes Obsidian's default behavior. */
-}
-
-/* Text Formatting */
-em {
-    color: var(--col-accent);
 }
 
 /* Hyperlink Strikethrough */
