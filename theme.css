@@ -276,6 +276,7 @@ body {
     --text-highlight-color: var(--col-muted-plus);
     --bold-weight: calc(var(--font-weight) + var(--bold-modifier)); /* --bold-modifier is 200 by default, so this value is 600) */
     --callout-txt-color: var(--col-accent-plus);
+    --canvas-basic-color: var(--col-muted);
     --hr-style: dashed;
 
     /* -------- WORKSPACE VARIABLES -------- */
@@ -291,6 +292,10 @@ body {
     --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
 
     --caret-color: var(--col-accent-plus);   
+
+/*    --canvas-color: var(--col-base) !important;*/
+    --canvas-dot-pattern: var(--canvas-basic-color);
+    --canvas-card-label-color: var(--canvas-basic-color); /* col-base is too prominent, but when it's col-muted the hover color ('--text-muted', the color of the active tab, the file title, and some others) is too bright. */
 
     --table-background: var(--col-base-background);
     --table-border-width: 2px;
@@ -331,7 +336,6 @@ body {
     --vault-profile-font-size: var(--col-base);
     --nav-heading-color: var(--col-accent);
 /*    --nav-item-weight-active: 900;*/
-    --canvas-card-label-color: var(--col-muted); /* col-base is too prominent, but when it's col-muted the hover color ('--text-muted', the color of the active tab, the file title, and some others) is too bright. */
 
 /*  .nav-file-title.is-active,  */
 /*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
@@ -638,6 +642,15 @@ ul > li::marker {
 /* Hyperlink Strikethrough */
 .markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
     color: var(--col-muted);
+}
+
+.canvas-edges path.canvas-display-path {
+    stroke: var(--canvas-basic-color);
+}
+
+.canvas-node-container {
+    border-width: 4px;
+    border-color: var(--canvas-basic-color);
 }
 
 hr {
