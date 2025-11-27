@@ -722,3 +722,12 @@ div.setting-item-name {
         display: block;
     }
 }
+
+@media (hover: hover) {
+  .mod-linux .titlebar-button.mod-close:hover,
+  .mod-windows .titlebar-button.mod-close:hover {
+    svg {
+        color: white;
+    }
+  }
+}
