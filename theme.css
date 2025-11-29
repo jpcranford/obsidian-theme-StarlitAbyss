@@ -468,6 +468,10 @@ body {
     --table-header-color: var(--col-base-background);
     --table-header-border-color: var(--text-normal);
     --table-border-color: var(--text-normal);
+
+    th.mod-active-col-handle {
+        color: var(--text-normal);
+    }
 }
 
 .retro-emphasis {
