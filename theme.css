@@ -37,14 +37,24 @@ settings:
         description: Use a pure black background.
         type: class-toggle
     -
-        id: bright-table-text
-        title: Brighter table text
-        description: Use a brighter color for text inside tables.
+        id: mono-table
+        title: Inverted table style
+        description: Use an inverted style for tables.
         type: class-toggle
+    -
+        id: retro-emphasis
+        title: Retro emphasis mode
+        description: In Reading view, bolded text will become ALL CAPS text instead. Does not affect editing view.
+        type: class-toggle
+    -
+        id: font-settings
+        title: Theme Font
+        type: heading
+        level: 1
     - 
         id: fnt-head-p
         title: Main font
-        description: Select a suitably sci-fi font for most text. Alternatives for the most famous have been provided- Eurostile Extended (Michroma), OCR-A (Kode Mono), and Bank Gothic (Science Gothic).
+        description: Select a suitably sci-fi font for most text. Alternatives for the most widely used have been provided- Eurostile Extended (Michroma), OCR-A (Kode Mono), and Bank Gothic (Science Gothic).
         type: variable-select
         default: Tomorrow
         options:
@@ -66,16 +76,10 @@ settings:
                 label: Match main font
                 value: var(--fnt-head-p)
     -
-        id: custom-mono-font
-        title: Custom monospace font
-        description: Use this theme's monospaced font instead of the option set in Appearance.
-        default: true
-        type: class-toggle
-    -
-        id: mono-table
-        title: Inverted table style
-        description: Use an inverted style for tables.
-        type: class-toggle
+        id: other-settings
+        title: Other Settings
+        type: heading
+        level: 1
     - 
         id: list-bullet-icon
         title: List bullet
@@ -91,15 +95,20 @@ settings:
             - '‣'
             - '\200B'
     -
-        id: retro-emphasis
-        title: Retro emphasis mode
-        description: In Reading view, bolded text will become ALL CAPS. Does not affect editing view.
+        id: bright-table-text
+        title: Brighter table text
+        description: Use a different color for text inside tables.
         type: class-toggle
     -
         id: bright-emphasis
         title: Brighten bold and italic text
-        description: For extra emphasis.
+        description: Use a brighter color for bolded and italicized text. Makes them pop. Useful for finding things at a glance.
         default: true
+        type: class-toggle
+    -
+        id: higher-contrast
+        title: Brighten all text
+        description: For extra contrast across the board. Overrides the "bold and italic" option above.
         type: class-toggle
 */
 /*█⬡*/
@@ -144,10 +153,6 @@ settings:
     --files-font-size: 1em;
     --fnt-title: "Michroma";
     --fnt-head-p: "Tomorrow";
-}
-
-.custom-mono-font {
-    --font-monospace-theme: "Kode Mono", var(--font-monospace-default);
 }
 
 /* TODO: Redo the light theme. */
@@ -287,6 +292,7 @@ body {
 
     /*  OBSIDIAN VARIABLES  */
     --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
+    --font-monospace-theme: "Kode Mono";
     --code-comment: var(--col-muted);
 
     --caret-color: var(--col-accent-plus);   
@@ -307,7 +313,7 @@ body {
     --table-column-first-border-width: 2px;
     --table-column-last-border-width: 2px;
     --table-column-alt-background: unset !important; /* This is required for it not to happen. See https://forum.obsidian.md/t/unintended-coloring-for-alternating-columns-with-table-background/101721 */
-    --table-text-color: var(--col-base);
+    --table-text-color: var(--text-normal);
     --table-add-button-border-color: var(--table-border-color);
 
     --link-external-color: var(--col-accent);
@@ -457,11 +463,11 @@ body {
 }
 
 .mono-table {
-    --table-header-background: var(--col-base);
-    --table-header-background-hover: var(--col-base);
+    --table-header-background: var(--text-normal);
+    --table-header-background-hover: var(--text-normal);
     --table-header-color: var(--col-base-background);
-    --table-header-border-color: var(--col-base);
-    --table-border-color: var(--col-base);
+    --table-header-border-color: var(--text-normal);
+    --table-border-color: var(--text-normal);
 }
 
 .retro-emphasis {
@@ -477,6 +483,10 @@ body {
 .bright-emphasis {
     --bold-color: var(--col-accent);
     --italic-color: var(--col-accent);
+}
+
+.higher-contrast {
+    --text-normal: var(--col-accent);
 }
 
 /* NOTE: Unsure about this look. */
@@ -697,13 +707,21 @@ div.setting-item-description > div > small > strong {
     color: var(--icon-color);
 }*/
 
-div.setting-item-name {
-    color: var(--col-accent-plus);
+.setting-item-name {
+    color: var(--col-accent);
 }
 
-/*div.vertical-tab-nav-item {
-    color: var(--col-accent-plus);
-}*/
+.vertical-tab-nav-item {
+/*    color: var(--col-accent);*/
+}
+
+.setting-item-description {
+    color: var(--text-normal);
+}
+
+.vertical-tab-nav-item .is-active {
+    font-weight: var(--bold-weight);
+}
 
 /* Fix: Table add row/column buttons too dim */
 .cm-table-widget {
