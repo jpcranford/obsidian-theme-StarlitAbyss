@@ -259,7 +259,7 @@ settings:
     --text-accent-hover: var(--col-accent-plus); 
 
     --interactive-normal: var(--col-muted);
-/*    --interactive-hover: var(--col-base);*/
+    --interactive-hover: var(--col-base);
     --interactive-accent: var(--col-accent);
 /*    --interactive-accent-hsl: var(--col-muted);*/
     --interactive-accent-hover: var(--col-accent-plus); 
@@ -616,6 +616,8 @@ ul > li::marker {
     font-weight: var(--bold-weight);
 }
 
+/* Fix: Canvas colors */
+
 .canvas-edges path.canvas-display-path {
     stroke: var(--canvas-basic-color);
 }
@@ -631,6 +633,12 @@ ul > li::marker {
     }
     .canvas-node:hover .canvas-node-label.mod-hover-label {
         opacity: 1;
+    }
+    .canvas-card-menu .canvas-card-menu-button:hover {
+        color: var(--col-accent);
+    }
+    .canvas-control-item:hover {
+        color: var(--col-accent-plus);
     }
 }
 
