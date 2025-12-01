@@ -326,6 +326,8 @@ body {
     --titlebar-background: var(--col-muted-plus);
     --titlebar-background-focused: var(--col-muted-plus);
     --titlebar-text-color: var(--col-muted);
+    --scrollbar-thumb-bg: var(--col-muted);
+    --scrollbar-active-thumb-bg: var(--col-base);
 
     --font-interface-theme: var(--fnt-head-p);
     --nav-item-color: var(--col-base);
@@ -621,6 +623,15 @@ ul > li::marker {
 .canvas-node-container {
     border-width: 4px;
     border-color: var(--canvas-basic-color);
+}
+
+@media (hover: hover) {
+    .canvas-node-label:hover {
+        color: var(--col-base);
+    }
+    .canvas-node:hover .canvas-node-label.mod-hover-label {
+        opacity: 1;
+    }
 }
 
 hr {
