@@ -48,7 +48,7 @@ settings:
         type: class-toggle
     -
         id: font-settings
-        title: Theme Font
+        title: Theme Fonts
         type: heading
         level: 1
     - 
@@ -76,6 +76,31 @@ settings:
                 label: Match main font
                 value: var(--fnt-head-p)
     -
+        id: font-settings
+        title: Contrast Controls
+        type: heading
+        level: 1
+    -
+        id: bright-table-text
+        title: Brighter table text
+        description: Use a different color for text inside tables.
+        type: class-toggle
+    -
+        id: bright-emphasis
+        title: Brighten bold and italic text
+        description: Use a brighter color for bolded and italicized text. Makes them pop. Useful for finding things at a glance.
+        type: class-toggle
+    -
+        id: higher-contrast
+        title: Brighten all text
+        description: For extra contrast across the board. Overrides the "bold and italic" option above.
+        type: class-toggle
+    -
+        id: boxed-callout
+        title: Boxed Callout
+        description: Use an empty box for callouts instead of a card.
+        type: class-toggle
+    -
         id: other-settings
         title: Other Settings
         type: heading
@@ -94,22 +119,6 @@ settings:
             - '*'
             - '‣'
             - '\200B'
-    -
-        id: bright-table-text
-        title: Brighter table text
-        description: Use a different color for text inside tables.
-        type: class-toggle
-    -
-        id: bright-emphasis
-        title: Brighten bold and italic text
-        description: Use a brighter color for bolded and italicized text. Makes them pop. Useful for finding things at a glance.
-        default: true
-        type: class-toggle
-    -
-        id: higher-contrast
-        title: Brighten all text
-        description: For extra contrast across the board. Overrides the "bold and italic" option above.
-        type: class-toggle
 */
 /*█⬡*/
 
@@ -137,14 +146,6 @@ settings:
     --col-danger: #230D0D;
     
     /* Font Sizing and Styling DECLARATIONS */
-    --siz-txt-title: 2em;
-    --siz-txt-h1: 1.75em;
-    --siz-txt-h2: 1.6em;
-    --siz-txt-h3: 1.45em;
-    --siz-txt-h4: 1.3em;
-    --siz-txt-h5: 1.15em;
-    --siz-txt-h6: 1em;
-    --siz-txt-p: 1rem; /* NTS: "rem" is :root's font-size, "em" is body's */
     --letterspacing-txt-headers: 1.5px;
     --letterspacing-txt-p: 0.5px;
     --oz-fta-folder-font-size: 1em;
@@ -220,7 +221,7 @@ settings:
 .theme-dark {
     /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
     /*  That's the '--accent-h' Obsidian variable, have to figure out a way to set it from the theme  */
-    --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
+    --col-base-background: HSL(var(--col-accent-value), 31%, 5%); /* TODO: Original L value was 6%. Testing out 5% for better contrast */
     --col-base: HSL(var(--col-accent-value), 47%, 47%);
     --col-accent: HSL(var(--col-accent-value), 100%, 62%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
@@ -233,12 +234,6 @@ settings:
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
     --col-danger: #381515;
-
-    /* Custom Panels, and menus Color Overrides */
-    --col-txt-menudropdowns: var(--col-accent);
-    --col-bckg-menudropdowns: var(--col-muted);
-    --col-txt-menudropdownhover: var(--col-accent);
-    --col-bckg-menudropdownhover: var(--col-muted);
     
     /* Default Colours for Obsidian Panels */
     --background-primary: var(--col-base-background);
@@ -256,13 +251,12 @@ settings:
     --background-modifier-form-field: var(--col-muted-plus);
     --text-normal: var(--col-base);
     --text-muted: var(--col-accent-plus);
-    --text-faint: var(--col-accent-plus);
+    --text-faint: var(--col-muted);
     --text-on-accent: var(--col-muted-plus);
     --text-error: var(--col-important);
     --text-success: var(--col-accent);
     --text-accent: var(--col-accent-plus);
-/*    --text-accent-hover: var(--col-important-plus); */
-/* TODO: What does this do? ^^^^^ */
+    --text-accent-hover: var(--col-accent-plus); 
 
     --interactive-normal: var(--col-muted);
 /*    --interactive-hover: var(--col-base);*/
@@ -283,10 +277,7 @@ body {
 
     /* -------- WORKSPACE VARIABLES -------- */
     /* Edit mode variables */
-    --col-ed-background: var(--col-base-background);
     --pad-ed-headers: 5px;
-    --fnt-ed-text: var(--fnt-head-p);
-    --letterspacing-ed-text: var(--letterspacing-txt-p);
     --col-ed-txt-highlight: var(--col-muted-plus);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
 
@@ -333,6 +324,8 @@ body {
     --ribbon-background: var(--col-muted-plus);
     --ribbon-background-collapsed: var(--col-base-background);
     --titlebar-background: var(--col-muted-plus);
+    --titlebar-background-focused: var(--col-muted-plus);
+    --titlebar-text-color: var(--col-muted);
 
     --font-interface-theme: var(--fnt-head-p);
     --nav-item-color: var(--col-base);
@@ -344,9 +337,11 @@ body {
 /*  .nav-file-title.is-active,  */
 /*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
     --nav-item-color-active: var(--col-accent-plus);
+    --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
     --tab-text-color-focused-active-current: var(--col-accent-plus);
+    --tab-text-color-focused: var(--col-base);
 
     --icon-color: var(--col-accent-plus);
     --icon-color-hover: var(--col-accent-plus);
@@ -354,12 +349,12 @@ body {
     --icon-color-focused: var(--col-accent-plus);
 
     --code-background: var(--col-muted);
-    --code-size: var(--siz-txt-p);
     --code-normal: var(--col-accent);
 
 /*    --list-numbered-style  list-style-type for numbered lists*/
-    --list-bullet-icon: "‣";
-    --list-bullet-radius: 30%; /* Obsidian default 50% creates circles, these remind me of CRTs. */
+/*    --list-bullet-icon: "‣";*/
+/*    --list-bullet-radius: 50%; */
+    /* ^^^ Obsidian default 50% creates circles, these remind me of CRTs. */
     --list-bullet-size: 0.4em;
     --list-marker-color: var(--col-base);
 
@@ -373,23 +368,20 @@ body {
 
     --text-highlight-bg: var(--col-accent);
 
-/*base or muted for off*/
-/*accent or accent plus for on*/
-/*    --toggle-thumb-color: var(--col-muted);*/
-
     --hr-color: var(--col-base);
     --hr-thickness: 4px;
 
     --inline-title-font: var(--fnt-title);
-    --inline-title-size: var(--siz-txt-title);
+    --inline-title-size: 2em;
     --inline-title-color: var(--col-accent-plus);
 
-    --h1-size: var(--siz-txt-h1);
-    --h2-size: var(--siz-txt-h2);
-    --h3-size: var(--siz-txt-h3);
-    --h4-size: var(--siz-txt-h4);
-    --h5-size: var(--siz-txt-h5);
-    --h6-size: var(--siz-txt-h6);    
+    --heading-spacing: calc(var(--p-spacing) * 2);
+    --h1-size: 1.75em;
+/*    --h2-size: 1.55em;*/
+/*    --h3-size: 1.45em;*/
+/*    --h4-size: 1.3em;*/
+/*    --h5-size: 1.15em;*/
+/*    --h6-size: 1em;    */
     --h1-color: var(--col-accent);
     --h2-color: var(--col-accent);
     --h3-color: var(--col-accent);
@@ -422,13 +414,13 @@ body {
     --h4-line-height: auto;
     --h5-line-height: auto;
     --h6-line-height: auto;
-    --heading-spacing: calc(var(--p-spacing) * 2);
 
     --blockquote-border-thickness: 4px;
     --blockquote-border-color: var(--col-base);
 /*    --blockquote-background-color: var(--col-muted-plus);*/
 /* ^^^ didn't need this, leaving it in just in case I do in future */
 
+/* NTS: --callout-color is the variable for after Obsidian figures out which of the following to use */
     --callout-default:   var(--col-muted);
     --callout-bug:       var(--col-muted);
     --callout-error:     var(--col-danger);
@@ -450,6 +442,9 @@ body {
     --code-background: var(--col-muted-plus);
     --code-border-color: var(--col-muted);
 /*    --code-border-width: 4px;*/
+
+    --dropdown-background: var(--col-muted);
+    --dropdown-background-hover: var(--col-accent-plus);\
 }
 
 .oled-background {
@@ -515,32 +510,18 @@ body {
     background-color: var(--col-base-background);
 }
 
-/* Left and Top bars */
-.workspace-ribbon .sidebar-toggle-button,
-.workspace-tab-header-container,
-.titlebar-button  {
-    background-color: var(--col-muted-plus);
+/* Fix: Recolor dropdown text */
+select,
+.combobox-button,
+.dropdown {
+    color: var(--col-accent);
 }
-
-/* Dropdowns (settings) */
-.dropdown, button:not(.clickable-icon), .dropdown option {
-    background-color: var(--col-bckg-menudropdowns);
-    color: var(--col-txt-menudropdowns);
-}
-
-.dropdown:hover, button:not(.clickable-icon):hover {
-    background-color: var(--col-bckg-menudropdownhover);
-    color: var(--col-txt-menudropdownhover);
-}
-
-/* -------- WORKSPACE -------- */
-/* -------- EDIT MODE -------- */
 
 /* Body */
-.mod-cm6 .cm-editor .cm-scroller {
-    background-color: var(--col-ed-background);
-    font-family: var(--fnt-ed-text);
-    letter-spacing: var(--letterspacing-ed-text);
+.mod-cm6 .cm-editor .cm-scroller,
+.markdown-preview-view {
+    letter-spacing: var(--letterspacing-txt-p);
+    /* NTS: Leave this one be, it changes Obsidian's default behavior. */
 }
 
 /* The below is the little "/a" to the right of an editing view. Commented out bc I can't stand the off-center editor it causes. */
@@ -562,7 +543,7 @@ body {
 .markdown-preview-view h1 {
     padding-bottom: 1rem;
     border-bottom: 4px dashed var(--col-base);
-    margin: 5px 0px 1rem !important; 
+    margin-bottom: 1rem !important; 
     /* Obsidian overrides all heading margins in editing view, so this !important is necessary to space the paragraph off the dotted line. */
 }
 
@@ -580,34 +561,31 @@ del {
 .markdown-preview-view mark {
     color: var(--text-highlight-color);
 }
+
 /* Highlighted Hyperlink */
 .cm-editor span.cm-highlight > .cm-underline {
-    color: var(--col-muted-plus);
+    color: var(--text-highlight-color);
 }
 
 .callout {
-/*    border-color: rgba(var(--callout-color), var(--callout-border-opacity));*/
-    background-color: var(--callout-color); /* Overrides Obsidian making this transparent af by default */
+    background-color: var(--callout-color); 
+    /* ^^^ Overrides Obsidian making this transparent af by default */
     color: var(--callout-txt-color);
+}
+
+.boxed-callout {
+    .callout {
+        background-color: var(--col-base-background);
+        border-color: var(--col-accent);
+        --callout-border-width: 4px;
+        color: var(--callout-txt-color);
+    }
 }
 
 /* Hovered Hyperlink Hover*/
 .markdown-preview-view mark > .external-link:hover, 
 .internal-link:hover {
     color: var(--col-ed-txt-highlight);
-}
-
-/* Hyperlink in a callout */
-.markdown-rendered .callout > .external-link, 
-.internal-link {
-    color: var(--col-ed-text-hyperlink);
-    background-color: inherit;
-}
-
-/* Hyperlink in a warning */
-.markdown-rendered .callout[data-callout="warning"] > .external-link, 
-.internal-link {
-    background-color: inherit;
 }
 
 /* Checkbox unchecked */
@@ -629,31 +607,11 @@ input.task-list-item-checkbox {
 }
 */
 
-.markdown-rendered ul,
-.markdown-rendered ol {
-    padding-left: var(--list-indent-reading);
-}
-
 /* These selectors come straight from Obsidian's CSS */
 .cm-s-obsidian .cm-formatting-list,
 ol > li::marker,
 ul > li::marker {
     font-weight: var(--bold-weight);
-}
-
-
-/* ---------- WORKSPACE --------- */
-/* -------- PREVIEW MODE -------- */
-
-/* Body */
-.markdown-preview-view {
-    letter-spacing: var(--letterspacing-txt-p);
-    /* NTS: Leave this one be, it changes Obsidian's default behavior. */
-}
-
-/* Hyperlink Strikethrough */
-.markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
-    color: var(--col-muted);
 }
 
 .canvas-edges path.canvas-display-path {
@@ -752,4 +710,9 @@ div.setting-item-description > div > small > strong {
         color: white;
     }
   }
+}
+
+/* Fix: Empty tab page actions are too bright */
+.empty-state-action {
+    color: var(--text-normal);
 }

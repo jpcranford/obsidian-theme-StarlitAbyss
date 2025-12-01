@@ -40,6 +40,7 @@ To install, download this repo folder, extract, then place the folder into your 
 * Calendar
 * File Tree Alternative Plugin
 
-## Wishlist
+## Wishlist & Known Issues
 
 - Custom caret *- unfortunately, without some JS coding I'm SOL on this one until CSS 4 drops and Obsidian integrates it. The general idea is to make the caret a box caret, like on old computer terminals. If anyone knows a way to accomplish this, a PR is more than welcome.*
+- Canvas - Changing a connection's arrowhead's color is not currently possible. It's just not a selectable object.
