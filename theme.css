@@ -100,25 +100,6 @@ settings:
         title: Boxed Callout
         description: Use an empty box for callouts instead of a card.
         type: class-toggle
-    -
-        id: other-settings
-        title: Other Settings
-        type: heading
-        level: 1
-    - 
-        id: list-bullet-icon
-        title: List bullet
-        description: Select which symbol you want to use for lists. Not currently working.
-        type: variable-select
-        default: "‣"
-        options:
-            - ">"
-            - "+"
-            - "-"
-            - "•"
-            - '*'
-            - '‣'
-            - '\200B'
 */
 /*█⬡*/
 
@@ -353,9 +334,6 @@ body {
     --code-background: var(--col-muted);
     --code-normal: var(--col-accent);
 
-/*    --list-numbered-style  list-style-type for numbered lists*/
-/*    --list-bullet-icon: "‣";*/
-/*    --list-bullet-radius: 50%; */
     /* ^^^ Obsidian default 50% creates circles, these remind me of CRTs. */
     --list-bullet-size: 0.4em;
     --list-marker-color: var(--col-base);
@@ -599,15 +577,6 @@ input.task-list-item-checkbox {
 /* Lists */
 /* TODO: Redo the custom bullet points below. */
 /* from https://forum.obsidian.md/t/custom-bullet-point-help/96900 */
-/*
-:is(.cm-fold-indicator:hover,*) ~ .cm-formatting.cm-formatting-list .list-bullet::after,
-.list-bullet::after {
-    content: var(--list-bullet-icon);
-    height: 1.6em;
-    background-color: unset;
-    box-shadow: none;
-}
-*/
 
 /* These selectors come straight from Obsidian's CSS */
 .cm-s-obsidian .cm-formatting-list,
