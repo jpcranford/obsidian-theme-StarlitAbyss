@@ -222,7 +222,7 @@ settings:
     /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
     /*  That's the '--accent-h' Obsidian variable, have to figure out a way to set it from the theme  */
     --col-base-background: HSL(var(--col-accent-value), 31%, 5%); /* TODO: Original L value was 6%. Testing out 5% for better contrast */
-    --col-base: HSL(var(--col-accent-value), 47%, 47%);
+    --col-base: HSL(var(--col-accent-value), 55%, 55%);
     --col-accent: HSL(var(--col-accent-value), 100%, 62%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
     --col-muted: HSL(var(--col-accent-value), 48%, 17%);
