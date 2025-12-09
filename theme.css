@@ -44,7 +44,7 @@ settings:
     -
         id: retro-emphasis
         title: Retro emphasis mode
-        description: In Reading view, bolded text will become ALL CAPS text instead. Does not affect editing view.
+        description: In Reading view, bolded text and table headers will become ALL CAPS text instead. Does not affect editing view.
         type: class-toggle
     -
         id: font-settings
@@ -240,7 +240,7 @@ settings:
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-accent-plus); 
 
-    --interactive-normal: var(--col-base-background);
+    --interactive-normal: var(--text-faint);
     --interactive-hover: var(--col-muted);
     --interactive-accent: var(--col-accent);
 /*    --interactive-accent-hsl: var(--col-muted);*/
@@ -457,6 +457,11 @@ body {
     b,
     strong {
         font-weight: var(--font-weight);
+        text-transform: uppercase;
+    }
+
+    .cm-html-embed th,
+    .markdown-rendered th {
         text-transform: uppercase;
     }
 }
