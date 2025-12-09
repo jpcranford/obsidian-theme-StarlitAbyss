@@ -15,7 +15,7 @@ settings:
         options:
             - 
                 label: Terminal Green
-                value: 130
+                value: 135
             - 
                 label: CyberPink
                 value: 320
@@ -185,7 +185,7 @@ settings:
 
 :root {
     /* Custom Colour Override DECLARATIONS */
-    --col-accent-value: 130;
+    --col-accent-value: 135;
     --col-base-background: #0B1510;
     --col-base: #318C54;
     --col-accent: #3FFF8C;
@@ -302,7 +302,7 @@ settings:
     --background-modifier-error: #c11b1b;
     --background-modifier-error-hover: var(--col-accent);
     --background-modifier-success: var(--col-muted-plus);
-    --background-modifier-message: var(--col-base);
+    --background-modifier-message: var(--col-muted);
     --background-modifier-form-field: var(--col-muted-plus);
     --text-normal: var(--col-base);
     --text-muted: var(--col-accent-plus);
