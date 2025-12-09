@@ -1,14 +1,14 @@
 ![Theme preview](img/theme.png)
 
-A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted in popular 80s sci-fi films.
+A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted in popular '80s sci-fi films.
 
-"Starlit Abyss" is based on Satchelmouth's excellent [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole).
+"Starlit Abyss" is based on Satchelmouth's [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole).
 
-This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. While the theme _should_ work without it, several cool features require the plugin in order to be switched on.
+This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. While the theme _should_ work without it, several features listed below require the plugin in order to be switched on.
 
 ## Installation
 > [!WARNING]
-> This theme is very much a work in progress. I've got a to-do list on this a mile long, so it may take some time until it's released onto Obsidian's in-app picker. If anyone is reading this and is interested in helping out, open an issue and I'll share the list.
+> This theme is still a work in progress. Issues and PRs are welcome.
 
 To install, download this repo folder, extract, then place the folder into your Obsidian's themes folder. According to Obsidian docs, the containing folder **must** be named "Starlit Abyss" for it to work.
 
