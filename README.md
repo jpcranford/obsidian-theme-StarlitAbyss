@@ -12,7 +12,20 @@ Light mode is not currently working, but it's on the way!
 > [!WARNING]
 > This theme is still a work in progress. Issues and PRs are welcome.
 
-To install, download this repo folder, extract, then place the folder into your Obsidian's themes folder. According to Obsidian docs, the containing folder **must** be named "Starlit Abyss" for it to work.
+### Method 1: Obsidian Community Store (Recommended)
+This method will auto-update.
+
+1.  Open **Settings** > **Appearance**.
+2.  Click **Manage** next to Themes.
+3.  Search for **"Starlit Abyss"**.
+4.  Click **Install** and then **Use**.
+
+### Method 2: Manual Installation
+1.  Download `theme.css` and `manifest.json` from the Releases page.
+2.  Go to your vault folder: `.obsidian/themes/`.
+3.  Create a folder named `Starlit Abyss`.
+4.  Paste the files there.
+5.  Select **Starlit Abyss** in Obsidian Settings.
 
 ## Features
 ### Color themes
