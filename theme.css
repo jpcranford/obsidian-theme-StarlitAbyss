@@ -719,6 +719,9 @@ ul > li::marker {
             color: var(--col-faint);
         }
     }
+    .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+        background-color: var(--col-base-background);
+    }
 }
 
 hr {
