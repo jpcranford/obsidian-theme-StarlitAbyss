@@ -696,6 +696,11 @@ ul > li::marker {
     border-color: var(--canvas-basic-color);
 }
 
+/* Fix: Disappearing Canvas buttons */
+.canvas-control-item.is-disabled svg {
+    color: var(--col-muted);
+}
+
 @media (hover: hover) {
     .canvas-node-label:hover {
         color: var(--col-base);
@@ -708,6 +713,11 @@ ul > li::marker {
     }
     .canvas-control-item:hover {
         color: var(--col-accent-plus);
+    }
+    .canvas-control-item.is-disabled:hover {
+         svg {
+            color: var(--col-faint);
+        }
     }
 }
 
