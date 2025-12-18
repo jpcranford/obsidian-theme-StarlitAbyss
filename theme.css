@@ -788,11 +788,7 @@ div.setting-item-description > div > small > strong {
 
 /* Fix: Table add row/column buttons too dim */
 .cm-table-widget {
-    padding-bottom: 30px !important; /* This !important is necessary to avoid the bigger row add button getting cut off by the following .cm-line */
-}
-.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
-    height: calc(var(--table-drag-handle-size) + 10px);
-    min-height: calc(var(--table-drag-handle-size) + 10px);
+    padding-bottom: 20px !important; /* This !important is necessary to avoid the bigger row add button getting cut off by the following .cm-line */
 }
 .markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn,
 .markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
