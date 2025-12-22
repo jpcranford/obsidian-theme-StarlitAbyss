@@ -631,7 +631,6 @@ select,
 /* Strikethrough */
 .cm-strikethrough,
 .cm-strikethrough >*,
-.cm-strikethrough ~*,
 del {
     color: var(--col-muted);
 }
