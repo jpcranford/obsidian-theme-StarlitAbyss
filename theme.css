@@ -358,6 +358,7 @@ body {
 
     --caret-color: var(--col-accent-plus);   
 
+    --setting-items-background: var(--col-faint);
 /*    --canvas-color: var(--col-base) !important;*/
     --canvas-dot-pattern: var(--canvas-basic-color);
     --canvas-card-label-color: var(--canvas-basic-color); /* col-base is too prominent, but when it's col-muted the hover color ('--text-muted', the color of the active tab, the file title, and some others) is too bright. */
@@ -412,9 +413,10 @@ body {
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
-    --tab-text-color: var(--col-muted);
-    --tab-text-color-focused: var(--col-base);
-    --tab-text-color-focused-active-current: var(--col-accent-plus);
+    --tab-text-color: var(--col-muted); /* Tab text when window is not focused */
+    --tab-text-color-focused: var(--col-muted); /* Tab text when window is focused */
+    --tab-text-color-focused-active: var(--col-base); /* Tab text when window focused AND tab is selected */
+    --tab-text-color-focused-active-current: var(--col-base); /* Tab text for tab where the cursor currently is */
 
     --icon-color: var(--col-accent-plus);
     --icon-color-hover: var(--col-accent-plus);
