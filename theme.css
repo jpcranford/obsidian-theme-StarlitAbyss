@@ -288,7 +288,7 @@ settings:
     --col-base: HSL(var(--col-accent-value), 55%, 55%);
     --col-accent: HSL(var(--col-accent-value), 75%, 58%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
-    --col-muted: HSL(var(--col-accent-value), 48%, 17%);
+    --col-muted: HSL(var(--col-accent-value), 55%, 20%);
     --col-faint: HSL(var(--col-accent-value), 40%, 12%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
     --text-selection: HSL(var(--col-accent-value), 45%, 30%);
@@ -309,12 +309,12 @@ settings:
     --background-modifier-border-hover: var(--col-accent);
     --background-modifier-border-focus: var(--col-accent-plus);
     --background-modifier-error: #c11b1b;
-    --background-modifier-error-hover: var(--col-accent);
+    --background-modifier-error-hover: red;
     --background-modifier-success: var(--col-muted-plus);
     --background-modifier-message: var(--col-muted);
     --background-modifier-form-field: var(--col-muted-plus);
     --text-normal: var(--col-base);
-    --text-muted: var(--col-accent-plus);
+    --text-muted: var(--col-muted);
     --text-faint: var(--col-faint);
     --text-on-accent: var(--col-muted-plus);
     --text-error: #c11b1b;
@@ -515,7 +515,8 @@ body {
 /*    --code-border-width: 4px;*/
 
     --dropdown-background: var(--col-muted);
-    --dropdown-background-hover: var(--col-accent-plus);\
+    --dropdown-background-hover: var(--col-accent-plus);
+    --pill-color-remove: var(--col-muted);
 }
 
 .oled-background {
