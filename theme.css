@@ -817,3 +817,6 @@ div.setting-item-description > div > small > strong {
     color: var(--text-normal);
 }
 
+.progress-bar-message {
+    color: var(--col-base);
+}
