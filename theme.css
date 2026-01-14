@@ -284,7 +284,8 @@ settings:
 .theme-dark {
     /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
     /*  That's the '--accent-h' Obsidian variable, have to figure out a way to set it from the theme  */
-    --col-base-background: HSL(var(--col-accent-value), 31%, 6%);
+    --col-background: HSL(var(--col-accent-value), 31%, 6%);
+    --col-base-background: var(--col-background);
     --col-base: HSL(var(--col-accent-value), 55%, 55%);
     --col-accent: HSL(var(--col-accent-value), 75%, 58%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
@@ -528,6 +529,9 @@ body {
     --col-base-background: black;
     --tab-outline-color: var(--col-accent);
 /*    --code-background: black;*/
+    .canvas-node-container {
+        background: var(--col-background); /* keeps Canvas cards the same background */
+    }
 }
 
 .bright-table-text {
@@ -692,14 +696,13 @@ ul > li::marker {
 
 .canvas-node-container {
     border-width: 4px;
+    border-radius: 12px;
     border-color: var(--canvas-basic-color);
 }
 
-/* Fix: Disappearing Canvas buttons */
 .canvas-control-item svg {
     color: var(--col-base);
 }
-
 .canvas-control-item.is-disabled svg {
     color: var(--col-muted);
 }
