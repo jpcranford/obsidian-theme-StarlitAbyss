@@ -206,7 +206,7 @@ settings:
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: #122127;
-    --col-danger: #230D0D;
+/*    --col-danger: #230D0D;*/
     
     /* Font Sizing and Styling DECLARATIONS */
     --letterspacing-txt-headers: 1.5px;
@@ -297,7 +297,8 @@ settings:
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
-    --col-danger: #381515;
+/*    --col-danger: #381515;*/
+    --col-danger: #b82727;
     
     /* Default Colours for Obsidian Panels */
     --background-primary: var(--col-base-background);
@@ -308,7 +309,7 @@ settings:
     --background-modifier-border: var(--col-muted-plus);
     --background-modifier-border-hover: var(--col-accent);
     --background-modifier-border-focus: var(--col-accent-plus);
-    --background-modifier-error: #c11b1b;
+    --background-modifier-error: var(--col-danger);
     --background-modifier-error-hover: red;
     --background-modifier-success: var(--col-muted-plus);
     --background-modifier-message: var(--col-muted);
@@ -317,7 +318,7 @@ settings:
     --text-muted: var(--col-muted);
     --text-faint: var(--col-faint);
     --text-on-accent: var(--col-muted-plus);
-    --text-error: #c11b1b;
+    --text-error: var(--col-danger);
     --text-success: var(--col-accent);
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-accent-plus); 
