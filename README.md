@@ -18,7 +18,7 @@ This method will auto-update.
 1.  Open **Settings** > **Appearance**.
 2.  Click **Manage** next to Themes.
 3.  Search for **"Starlit Abyss"**.
-4.  Click **Install** and then **Use**.
+4.  Click **Install** and then **Enable**.
 
 ### Method 2: Manual Installation
 1.  Download `theme.css` and `manifest.json` from the Releases page.
@@ -62,3 +62,4 @@ This method will auto-update.
 - Canvas 
 	- Changing a connection's arrowhead's color is not currently possible. It's not a CSS selectable object.
 	- Some strange 1px grey borders will show when viewing a table header row via a Canvas embed, but not when in direct Reading or Editing views of those same notes.
+- Some way for black text/white page PDF files to be recolored to match the theme
