@@ -519,6 +519,8 @@ body {
     --dropdown-background: var(--col-muted);
     --dropdown-background-hover: var(--col-accent-plus);
     --pill-color-remove: var(--col-muted);
+/*    --tag-background: var(--col-muted);*/
+    --metadata-label-text-color: var(--col-base);
 }
 
 .oled-background {
