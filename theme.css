@@ -751,7 +751,7 @@ div.setting-item-description > div > small > strong {
 /* Fix: Settings toggles - Wrong colors */
 
 .mod-toggle .checkbox-container {
-    background-color: var(--interactive-normal);
+    background-color: var(--text-muted);
 }
 
 .mod-toggle .checkbox-container.is-enabled {
@@ -819,4 +819,8 @@ div.setting-item-description > div > small > strong {
 
 .progress-bar-message {
     color: var(--col-base);
+}
+
+.modal.mod-plugin-debug .startup-desc {
+    color: var(--text-muted);
 }
