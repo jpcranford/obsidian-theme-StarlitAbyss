@@ -34,7 +34,7 @@ settings:
     -
         id: oled-background
         title: Pure black background
-        description: Use a pure black background.
+        description: Use a pure black background. Great for OLED screens.
         type: class-toggle
     -
         id: mono-table
@@ -81,6 +81,11 @@ settings:
         type: heading
         level: 1
     -
+        id: boxed-callout
+        title: Boxed Callout
+        description: Use an empty box for callouts instead of a card.
+        type: class-toggle
+    -
         id: bright-table-text
         title: Brighter table text
         description: Use a different color for text inside tables.
@@ -94,11 +99,6 @@ settings:
         id: higher-contrast
         title: Brighten all text
         description: For extra contrast across the board. Overrides the "bold and italic" option above.
-        type: class-toggle
-    -
-        id: boxed-callout
-        title: Boxed Callout
-        description: Use an empty box for callouts instead of a card.
         type: class-toggle
 */
 /*█⬡*/
