@@ -495,19 +495,19 @@ body {
 /* ^^^ didn't need this, leaving it in just in case I do in future */
 
 /* NTS: --callout-color is the variable for after Obsidian figures out which of the following to use */
-    --callout-default:   var(--col-muted);
-    --callout-bug:       var(--col-muted);
+    --callout-default:   var(--col-faint);
+    --callout-bug:       var(--col-faint);
     --callout-error:     var(--col-danger);
-    --callout-example:   var(--col-muted);
-    --callout-fail:      var(--col-muted);
-    --callout-important: var(--col-muted);
-    --callout-info:      var(--col-muted);
-    --callout-question:  var(--col-muted);
-    --callout-quote:     var(--col-muted);
-    --callout-success:   var(--col-muted);
-    --callout-summary:   var(--col-muted);
-    --callout-tip:       var(--col-muted);
-    --callout-todo:      var(--col-muted);
+    --callout-example:   var(--col-faint);
+    --callout-fail:      var(--col-faint);
+    --callout-important: var(--col-faint);
+    --callout-info:      var(--col-faint);
+    --callout-question:  var(--col-faint);
+    --callout-quote:     var(--col-faint);
+    --callout-success:   var(--col-faint);
+    --callout-summary:   var(--col-faint);
+    --callout-tip:       var(--col-faint);
+    --callout-todo:      var(--col-faint);
     --callout-warning:   var(--col-danger);
 /*    --callout-border-color: var(--table-border-color);*/
 /*    --callout-border-width: 4px;*/
