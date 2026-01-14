@@ -824,6 +824,10 @@ div.setting-item-description > div > small > strong {
     color: var(--col-base);
 }
 
+.menu {
+    border-width: 2px;
+}
+
 .modal.mod-plugin-debug .startup-desc {
     color: var(--text-muted);
 }
