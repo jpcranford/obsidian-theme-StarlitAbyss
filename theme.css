@@ -702,6 +702,10 @@ ul > li::marker {
 }
 
 /* Fix: Disappearing Canvas buttons */
+.canvas-control-item svg {
+    color: var(--col-base);
+}
+
 .canvas-control-item.is-disabled svg {
     color: var(--col-muted);
 }
