@@ -841,5 +841,5 @@ h2.aat-card-title {
     color: var(--h2-color);
 }
 .aat-card {
-    border: 2px solid var(--col-base);
+    border: 4px solid var(--col-base);
 }
