@@ -656,16 +656,10 @@ del {
     background-color: var(--callout-color); 
     /* ^^^ Overrides Obsidian making this transparent af by default */
     color: var(--callout-txt-color);
+    border-radius: 8px;
 }
 
-.boxed-callout {
-    .callout {
-        background-color: var(--col-base-background);
-        border-color: var(--col-accent);
-        --callout-border-width: 4px;
-        color: var(--callout-txt-color);
-    }
-}
+/* boxed-callout has moved to bottom for plugin compatibility */
 
 /* Hovered Hyperlink Hover*/
 .markdown-preview-view mark > .external-link:hover, 
@@ -837,9 +831,39 @@ div.setting-item-description > div > small > strong {
 }
 
 /* Plugin support: April's Automatic Timelines */
+/* Basically, this code makes the vertical timelines match the current settings for the callout boxes */
+a.internal-link.aat-card {
+    background-color: var(--callout-default);
+    border: var(--callout-border-width) solid var(--col-base);
+    color: var(--callout-txt-color);
+    .aat-card-body {
+        color: var(--callout-txt-color);
+    }
+    .aat-card-start-date {
+        color: var(--col-muted);
+    }
+}
+a.internal-link.aat-card:hover {
+    background-color: var(--callout-default);
+}
 h2.aat-card-title {
     color: var(--h2-color);
 }
-.aat-card {
-    border: 4px solid var(--col-base);
+
+.boxed-callout {
+    --callout-border-width: 4px;
+    --callout-txt-color: var(--col-base);
+    .callout {
+        background-color: var(--col-base-background);
+        border-color: var(--col-accent);
+        color: var(--callout-txt-color);
+    }
+    a.internal-link.aat-card {
+        background-color: var(--col-base-background);
+        border: var(--callout-border-width) solid var(--col-base);
+        color: var(--callout-txt-color);
+    }
+    a.internal-link.aat-card:hover {
+        background-color: var(--col-base-background);
+    }
 }
