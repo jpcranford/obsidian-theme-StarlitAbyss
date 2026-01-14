@@ -831,3 +831,11 @@ div.setting-item-description > div > small > strong {
 .modal.mod-plugin-debug .startup-desc {
     color: var(--text-muted);
 }
+
+/* Plugin support: April's Automatic Timelines */
+h2.aat-card-title {
+    color: var(--h2-color);
+}
+.aat-card {
+    border: 2px solid var(--col-base);
+}

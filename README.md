@@ -55,6 +55,7 @@ This method will auto-update.
 * Kanban
 * Calendar
 * File Tree Alternative Plugin
+* April's Automatic Timelines
 
 ## Wishlist & Known Issues
 
