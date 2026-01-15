@@ -276,8 +276,6 @@ settings:
 
 /* Choose colors for dark theme */
 .theme-dark {
-    /*  TODO: Grab the accent color set in Obsidian's Appearance tab, then calculate theme off that   */
-    /*  That's the '--accent-h' Obsidian variable, have to figure out a way to set it from the theme  */
     --col-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base-background: var(--col-background);
     --col-base: HSL(var(--col-accent-value), 55%, 55%);
@@ -403,8 +401,6 @@ body {
     --nav-heading-color: var(--col-accent);
 /*    --nav-item-weight-active: 900;*/
 
-/*  .nav-file-title.is-active,  */
-/*    --nav-parent-item-color-active: var(--col-bckg-selectedtitles); */
     --nav-item-color-active: var(--col-accent-plus);
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
