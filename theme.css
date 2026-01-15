@@ -31,6 +31,9 @@ settings:
             - 
                 label: Moonbase Blue
                 value: 200
+            -
+                label: Use Obsidian's accent color
+                value: var(--accent-h)
     -
         id: oled-background
         title: Pure black background
