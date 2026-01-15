@@ -405,6 +405,7 @@ body {
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
+    --nav-tag-color-active: var(--col-base);
     --tab-text-color: var(--col-muted); /* Tab text when window is not focused */
     --tab-text-color-focused: var(--col-muted); /* Tab text when window is focused */
     --tab-text-color-focused-active: var(--col-base); /* Tab text when window focused AND tab is selected */
