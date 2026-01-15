@@ -4,7 +4,7 @@ A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted
 
 "Starlit Abyss" is based on Satchelmouth's [WYConsole Theme](https://github.com/Satchelmouth/Obsidian-Theme-WYConsole).
 
-This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. While the theme _should_ work without it, several features listed below require the plugin in order to be switched on.
+**This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.** While the theme _should_ work without it, several features listed below require the plugin in order to be switched on.
 
 Light mode is not currently working, but it's on the way!
 
@@ -13,7 +13,7 @@ Light mode is not currently working, but it's on the way!
 > This theme is still a work in progress. Issues and PRs are welcome.
 
 ### Method 1: Obsidian Community Store (Recommended)
-This method will auto-update.
+This method will auto-update when a new version is released.
 
 1.  Open **Settings** > **Appearance**.
 2.  Click **Manage** next to Themes.
@@ -34,6 +34,8 @@ This method will auto-update.
 |  ![Terminal Green](img/theme.png)<br>*Terminal Green*  |     ![CyberPink](img/col-pink.png)<br>*CyberPink*     |
 |   ![Rogue AI Red](img/col-red.png)<br>*Rogue AI Red*   | ![Ominous Orange](img/col-or.png)<br>*Ominous Orange* |
 | ![Ypsilon Yellow](img/col-yel.png)<br>*Ypsilon Yellow* |  ![Moonbase Blue](img/col-bl.png)<br>*Moonbase Blue*  |
+
+There is also an option to use Obsidian's accent color to set the hue.
 
 ### Multiple fonts:
 - [ ] TODO: Screenshot here
