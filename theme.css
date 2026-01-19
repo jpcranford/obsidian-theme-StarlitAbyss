@@ -198,18 +198,18 @@ settings:
 :root {
     /* Custom Colour Override DECLARATIONS */
     --col-accent-value: 135;
-    --col-base-background: #0B1510;
+    /*--col-base-background: #0B1510;
     --col-base: #318C54;
     --col-accent: #3FFF8C;
     --col-accent-plus: #99E5B5;
     --col-muted: #163F26;
     --col-muted-plus: #020704;
-/*    --col-text-selection: #437254;*/
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
+    --col-safety: #122127;*/
+/*    --col-text-selection: #437254;*/
 /*    --col-important-plus: #FFF2BF;*/
-    --col-safety: #122127;
-/*    --col-danger: #230D0D;*/
+    --col-danger: #b82727;
     
     /* Font Sizing and Styling DECLARATIONS */
     --letterspacing-txt-headers: 1.5px;
@@ -225,24 +225,24 @@ settings:
 /* TODO: Redo the light theme. */
 .theme-light {
     /* Custom Workspace Color Overrides */
-    /*--col-base-background: #D7DDD9;
-    --col-base: #64A055; 
-    --col-accent: #437A41; 
-    --col-accent-plus: #20542C; 
-    --col-muted: #86C66C;  
-    --col-muted-plus: #C9D3CB;  
-    --col-important: #0457E5; 
-    --col-important-muted: #3F8CFF; 
-    --col-important-plus: #011F64; 
-    --col-safety: #ACD580; 
-    --col-danger: #86C66C; */
+    --col-background: hsl(var(--col-accent-value), 15%, 85%);
+    --col-base-background: var(--col-background);
+    --col-base: hsl(var(--col-accent-value), 70%, 18%); 
+    --col-accent: hsl(var(--col-accent-value), 75%, 23%); 
+    --col-accent-plus: hsl(var(--col-accent-value), 55%, 22%); 
+    --col-muted: hsl(var(--col-accent-value), 55%, 43%);  
+    --col-muted-plus: hsl(var(--col-accent-value), 20%, 80%);  
+    --col-faint: hsl(var(--col-accent-value), 55%, 70%);
 
+    --text-selection: HSL(var(--col-accent-value), 45%, 70%);
+
+    /*--col-important: #0457E5; 
+    --col-important-muted: #3F8CFF; 
+    --col-important-plus: #011F64; */
     --col-important: #FFD303;
     --col-important-muted: #3F3401;
 /*    --col-important-plus: #FFF2BF;*/
     --col-safety: var(--col-muted);
-/*    --col-danger: #381515;*/
-    --col-danger: #b82727;
 
     /* Default Colours for Obsidian Panels */
     --background-primary: var(--col-base-background);
@@ -272,13 +272,15 @@ settings:
     --interactive-accent: var(--col-accent);
 /*    --interactive-accent-hsl: var(--col-muted);*/
     --interactive-accent-hover: var(--col-accent-plus); 
+
+    --nav-tag-color: var(--col-muted);
 }
 
 /* Choose colors for dark theme */
 .theme-dark {
     --col-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base-background: var(--col-background);
-    --col-base: HSL(var(--col-accent-value), 55%, 55%);
+    --col-base: HSL(var(--col-accent-value), 70%, 55%);
     --col-accent: HSL(var(--col-accent-value), 75%, 58%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
     --col-muted: HSL(var(--col-accent-value), 55%, 20%);
@@ -344,6 +346,7 @@ body {
     --pad-ed-headers: 5px;
     --col-ed-txt-highlight: var(--col-muted-plus);
     --col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
+    --text-highlight-bg: var(--col-accent);
 
     /*  OBSIDIAN VARIABLES  */
     --font-text-theme: var(--fnt-head-p); /* Gotta say, I love this variable. It's already in Obsidian's fallback list, so I don't have to worry about recreating the whole list myself. */
@@ -430,8 +433,6 @@ body {
     --checkbox-border-color-hover: var(--col-accent-plus);
     --checklist-done-color: var(--col-muted);
     --checkbox-radius: 2px;
-
-    --text-highlight-bg: var(--col-accent);
 
     --hr-color: var(--col-base);
     --hr-thickness: 4px;
