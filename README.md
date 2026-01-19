@@ -6,8 +6,6 @@ A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted
 
 **This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.** While the theme _should_ work without it, several features listed below require the plugin in order to be switched on.
 
-Light mode is not currently working, but it's on the way!
-
 ## Installation
 > [!WARNING]
 > This theme is still a work in progress. Issues and PRs are welcome.
@@ -51,7 +49,7 @@ There is also an option to use Obsidian's accent color to set the hue.
 | ![](img/ft-table-normal.png) | ![](img/ft-table-invert.png) |
 
 ## Supported Plugins
-* Style Settings *(required)*
+* Style Settings *(required for style options listed above)*
 * Advanced Tables
 * Sheets Extended
 * Kanban
