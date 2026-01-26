@@ -515,6 +515,7 @@ body {
     --pill-color-remove: var(--col-muted);
 /*    --tag-background: var(--col-muted);*/
     --metadata-label-text-color: var(--col-base);
+    --status-bar-text-color: var(--col-base);
 }
 
 .oled-background {
