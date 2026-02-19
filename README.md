@@ -49,13 +49,13 @@ There is also an option to use Obsidian's accent color to set the hue.
 | ![](img/ft-table-normal.png) | ![](img/ft-table-invert.png) |
 
 ## Supported Plugins
-* Style Settings *(required for style options listed above)*
-* Advanced Tables
-* Sheets Extended
+* [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) *(required for style options listed above)*
+* [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian)
+* [Sheets Extended](https://github.com/NicoNekoru/obsidan-advanced-table-xt)
 * Kanban
 * Calendar
 * File Tree Alternative Plugin
-* April's Automatic Timelines
+* [April's Automatic Timelines](https://github.com/April-Gras/obsidian-auto-timelines)
 
 ## Wishlist & Known Issues
 
