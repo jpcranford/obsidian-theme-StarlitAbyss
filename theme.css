@@ -725,9 +725,11 @@ ul > li::marker {
 
 hr {
   border-top: var(--hr-thickness) var(--hr-style);
+  border-color: var(--hr-color);
 }
 .markdown-rendered hr {
   border-top: var(--hr-thickness) var(--hr-style);
+  border-color: var(--hr-color);
 }
 
 /* Fix: Style Settings - UI Menu Font Sizes*/
