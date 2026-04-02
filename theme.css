@@ -409,6 +409,7 @@ body {
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
+    --nav-item-size: 12px;
     --nav-tag-color-active: var(--col-base);
     --tab-text-color: var(--col-muted); /* Tab text when window is not focused */
     --tab-text-color-focused: var(--col-muted); /* Tab text when window is focused */
@@ -865,4 +866,9 @@ h2.aat-card-title {
     a.internal-link.aat-card:hover {
         background-color: var(--col-base-background);
     }
+}
+
+div.nav-files-container {
+    padding-left: 0px;
+    padding-right: 4px;
 }
