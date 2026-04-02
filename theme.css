@@ -398,12 +398,13 @@ body {
     --scrollbar-active-thumb-bg: var(--col-base);
 
     --font-interface-theme: var(--fnt-head-p);
-    --nav-item-color: var(--col-base);
     --vault-profile-color: var(--col-base);
     --vault-profile-font-size: var(--col-base);
     --nav-heading-color: var(--col-accent);
 /*    --nav-item-weight-active: 900;*/
 
+    --nav-item-color: var(--col-base);
+    --nav-collapse-icon-color: var(--col-base);
     --nav-item-color-active: var(--col-accent-plus);
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
