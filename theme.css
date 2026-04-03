@@ -405,13 +405,18 @@ body {
 
     --nav-item-color: var(--col-base);
     --nav-collapse-icon-color: var(--col-base);
-    --nav-item-color-active: var(--col-accent-plus);
+    --nav-item-color-active: var(--col-background);
     --nav-item-color-hover: var(--col-accent-plus);
-    --nav-item-background-active: var(--col-muted);
+    --nav-item-background-active: var(--col-base);
     --nav-item-weight-active: 600;
     --nav-indentation-guide-color: var(--col-muted);
+    --nav-tag-color-active: var(--col-background);
+    /* Below is the old "muted" nav style. Restore these if the inverted style doesn't work out. */
+    /*--nav-item-color-active: var(--col-accent-plus);
+    --nav-item-background-active: var(--col-muted);
+    --nav-tag-color-active: var(--col-base);*/
+
 /*    --nav-indentation-guide-width: 1px;*/ /* Keeping this here just in case. For now. */
-    --nav-tag-color-active: var(--col-base);
     --tab-text-color: var(--col-muted); /* Tab text when window is not focused */
     --tab-text-color-focused: var(--col-muted); /* Tab text when window is focused */
     --tab-text-color-focused-active: var(--col-base); /* Tab text when window focused AND tab is selected */
