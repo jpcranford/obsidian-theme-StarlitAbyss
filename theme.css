@@ -509,6 +509,7 @@ body {
 /*    --callout-border-color: var(--table-border-color);*/
 /*    --callout-border-width: 4px;*/
 /*    --callout-radius*/
+    --callout-padding: 1em .5em .5em 1em;
 
     --code-background: var(--col-muted-plus);
     --code-border-color: var(--col-muted);
@@ -688,7 +689,7 @@ ul > li::marker {
 
 /* Fix: Canvas colors */
 
-.canvas-edges path.canvas-display-path {
+.canvas-edges g path.canvas-display-path {
     stroke: var(--canvas-basic-color);
 }
 
