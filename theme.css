@@ -410,6 +410,8 @@ body {
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
     --nav-item-size: 12px;
+    --nav-indentation-guide-color: var(--col-muted);
+/*    --nav-indentation-guide-width: 1px;*/ /* Keeping this here just in case. For now. */
     --nav-tag-color-active: var(--col-base);
     --tab-text-color: var(--col-muted); /* Tab text when window is not focused */
     --tab-text-color-focused: var(--col-muted); /* Tab text when window is focused */
@@ -550,7 +552,8 @@ body {
 /*    .cm-strong,*/
     b,
     strong {
-        font-weight: var(--font-weight);
+        /* This following line removes bold weight from bold text. Comment out to keep it. */
+        font-weight: var(--font-weight); 
         text-transform: uppercase;
     }
 
