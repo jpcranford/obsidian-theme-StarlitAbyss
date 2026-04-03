@@ -409,7 +409,6 @@ body {
     --nav-item-color-hover: var(--col-accent-plus);
     --nav-item-background-active: var(--col-muted);
     --nav-item-weight-active: 600;
-    --nav-item-size: 12px;
     --nav-indentation-guide-color: var(--col-muted);
 /*    --nav-indentation-guide-width: 1px;*/ /* Keeping this here just in case. For now. */
     --nav-tag-color-active: var(--col-base);
