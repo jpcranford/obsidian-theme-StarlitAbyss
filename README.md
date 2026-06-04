@@ -7,9 +7,6 @@ A theme for [Obsidian](https://obsidian.md/) based on computer consoles depicted
 **This theme requires the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.** While the theme _should_ work without it, several features listed below require the plugin in order to be switched on.
 
 ## Installation
-> [!WARNING]
-> This theme is still a work in progress. Issues and PRs are welcome.
-
 ### Method 1: Obsidian Community Store (Recommended)
 This method will auto-update when a new version is released.
 
