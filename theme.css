@@ -284,7 +284,7 @@ settings:
     --col-accent: HSL(var(--col-accent-value), 75%, 58%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
     --col-muted: HSL(var(--col-accent-value), 55%, 20%);
-    --col-faint: HSL(var(--col-accent-value), 40%, 12%);
+    --col-faint: HSL(var(--col-accent-value), 75%, 22%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
     --text-selection: HSL(var(--col-accent-value), 45%, 30%);
 
