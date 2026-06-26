@@ -280,11 +280,11 @@ settings:
 .theme-dark {
     --col-background: HSL(var(--col-accent-value), 31%, 6%);
     --col-base-background: var(--col-background);
-    --col-base: HSL(var(--col-accent-value), 70%, 55%);
-    --col-accent: HSL(var(--col-accent-value), 75%, 58%);
+    --col-base: HSL(var(--col-accent-value), 75%, 60%);
+    --col-accent: HSL(var(--col-accent-value), 75%, 75%);
     --col-accent-plus: HSL(var(--col-accent-value), 59%, 75%);
-    --col-muted: HSL(var(--col-accent-value), 55%, 20%);
-    --col-faint: HSL(var(--col-accent-value), 75%, 22%);
+    --col-muted: HSL(var(--col-accent-value), 55%, 35%);
+    --col-faint: HSL(var(--col-accent-value), 65%, 20%);
     --col-muted-plus: HSL(var(--col-accent-value), 56%, 2%);
     --text-selection: HSL(var(--col-accent-value), 45%, 30%);
 
@@ -355,7 +355,7 @@ body {
 
     --caret-color: var(--col-accent-plus);   
 
-    --setting-items-background: var(--col-faint);
+    --setting-items-background: var(--col-muted-plus);
 /*    --canvas-color: var(--col-base) !important;*/
     --canvas-dot-pattern: var(--canvas-basic-color);
     --canvas-card-label-color: var(--canvas-basic-color); /* col-base is too prominent, but when it's col-muted the hover color ('--text-muted', the color of the active tab, the file title, and some others) is too bright. */
